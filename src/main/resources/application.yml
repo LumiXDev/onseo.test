@@ -1,0 +1,21 @@
+# See http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+spring:
+  main.show-banner: false
+
+logging:
+  file: app.log
+  level.gamesys.cashier.paymentslobbyservice: INFO
+  pattern:
+    console: "%-5level [%d{ISO8601, UTC}] [requestId=%X{Request-Tracker:-NA}] %logger: %msg%n"
+    file: "%-5level [%d{ISO8601, UTC}] [requestId=%X{Request-Tracker:-NA}] %logger: %msg%n"
+server:
+  port: 9009
+
+placeholderclient:
+  baseURI: "https://jsonplaceholder.typicode.com/"
+
+resourcemap:
+  todoURI: "todos/"
+  commentURI: "comments/"
+  userURI: "users/"
+
