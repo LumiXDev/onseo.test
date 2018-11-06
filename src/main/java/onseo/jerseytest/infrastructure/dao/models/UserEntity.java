@@ -21,6 +21,6 @@ public class UserEntity implements Entity {
     private CompanyEntity company;
 
     public String getEndpointSuffix() {
-        return "users/";
+        return "/users/";
     }
 }

@@ -16,6 +16,6 @@ public class CommentEntity implements Entity{
 
     public String getEndpointSuffix()
     {
-        return "comments/";
+        return "/comments/";
     }
 }

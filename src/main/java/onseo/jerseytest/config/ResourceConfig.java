@@ -10,9 +10,5 @@ import org.springframework.context.annotation.Configuration;
 public class ResourceConfig extends org.glassfish.jersey.server.ResourceConfig {
     ResourceConfig(){
         register(SampleEndpoint.class);
-
-        //Register endpoints for jersey here if necessary
-        //Like so:
-        //register(ENDP_CLS.class);
     }
 }
