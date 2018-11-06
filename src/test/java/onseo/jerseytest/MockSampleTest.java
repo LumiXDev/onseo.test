@@ -42,7 +42,6 @@ public class MockSampleTest {
         System.out.println(summaryService.getToDo(111));
     }
 
-
     private ToDoEntity generateStubEntity()
     {
         ToDoEntity result = new ToDoEntity();
