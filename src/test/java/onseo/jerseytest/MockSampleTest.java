@@ -19,7 +19,6 @@ import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class MockSampleTest {
-
     //Mocks
     @Mock
     private PlaceholderClient<ToDoEntity> toDoEntityPlaceholderClient;
