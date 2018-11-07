@@ -1,28 +1,33 @@
 package onseo.jerseytest.functional;
 
-import com.github.tomakehurst.wiremock.client.WireMock;
-import com.github.tomakehurst.wiremock.junit.WireMockClassRule;
+import io.restassured.RestAssured;
+import onseo.jerseytest.config.AppConfig;
 import onseo.jerseytest.config.properties.PlaceholderClientProperties;
-
 import onseo.jerseytest.services.SummaryService;
+
+import com.github.tomakehurst.wiremock.junit.WireMockClassRule;
+import static com.github.tomakehurst.wiremock.core.WireMockConfiguration.wireMockConfig;
+import static org.mockito.Mockito.when;
+
 import org.junit.Before;
 import org.junit.ClassRule;
 import org.junit.Rule;
 import org.junit.runner.RunWith;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.actuate.autoconfigure.web.server.LocalManagementPort;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.SpyBean;
 import org.springframework.boot.web.server.LocalServerPort;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import io.restassured.RestAssured;
-
-import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
-import static com.github.tomakehurst.wiremock.core.WireMockConfiguration.wireMockConfig;
-import static org.mockito.Mockito.when;
+//import io.restassured.RestAssured;
 
 @RunWith(SpringRunner.class)
+@SpringBootTest(
+        webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT
+)
+@ActiveProfiles("mediumtest")
 public abstract class AbstractMediumTest {
 
     @ClassRule
@@ -37,9 +42,6 @@ public abstract class AbstractMediumTest {
     @LocalServerPort
     private int serverPort;
 
-    @LocalManagementPort
-    private int managementPort;
-
     @Autowired
     private SummaryService summaryService;
 
@@ -52,14 +54,6 @@ public abstract class AbstractMediumTest {
 
     private void setupSpies() {
 
-        when(placeholderClientPropertiesSpy.getMockport()).thenReturn(wmClassRule.port());
-    }
-
-    protected void runStubProc() {
-        wireMockServer.stubFor(WireMock.get("URL")
-                .willReturn(aResponse()
-                        .withFixedDelay(1000)
-                        .withHeader("Content-Type", "application/json")
-                        .withBody("BODY_STRING")));
+        when(placeholderClientPropertiesSpy.getPort()).thenReturn(wmClassRule.port());
     }
 }

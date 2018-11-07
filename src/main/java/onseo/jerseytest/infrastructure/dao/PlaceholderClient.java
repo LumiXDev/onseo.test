@@ -1,6 +1,8 @@
 package onseo.jerseytest.infrastructure.dao;
 
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import onseo.jerseytest.config.properties.PlaceholderClientProperties;
 import onseo.jerseytest.infrastructure.dao.models.Entity;
 import org.springframework.beans.factory.annotation.Value;
 
@@ -10,18 +12,20 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 @Slf4j
-public class PlaceholderClient<T extends Entity>{
+@AllArgsConstructor
+public class PlaceholderClient<T extends Entity> {
 
+    //TODO: instantiate a clientbuilder with parameters I want
     private final Client client = ClientBuilder.newClient();
 
-    @Value("${placeholderclient.baseURI}")
-    private String baseURI;
+
+    private PlaceholderClientProperties placeholderClientProperties;
 
     public T getEntity(int id, String endpointSuffix, Class<T> cls) {
         log.info("Client class has been called for entity " + cls.getName());
 
         Response response = client
-                .target(baseURI + endpointSuffix + id)
+                .target(placeholderClientProperties.getHostURL() + ":" + placeholderClientProperties.getPort() + endpointSuffix + id)
                 .request(MediaType.APPLICATION_JSON)
                 .get();
 
@@ -29,7 +33,6 @@ public class PlaceholderClient<T extends Entity>{
         log.info("Response from JSON_Placeholder handled successfully");
 
         return result;
-
     }
 
     private T handleResponse(Response response, Class<T> cls)

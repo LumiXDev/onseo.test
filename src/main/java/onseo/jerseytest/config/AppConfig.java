@@ -1,5 +1,6 @@
 package onseo.jerseytest.config;
 
+import onseo.jerseytest.config.properties.PlaceholderClientProperties;
 import onseo.jerseytest.infrastructure.dao.PlaceholderClient;
 import onseo.jerseytest.infrastructure.dao.models.CommentEntity;
 import onseo.jerseytest.infrastructure.dao.models.ToDoEntity;
@@ -13,23 +14,28 @@ import org.springframework.context.annotation.Configuration;
 public class AppConfig {
 
     @Bean
-    PlaceholderClient<ToDoEntity> toDoEntityPlaceholderClient() {
-        return new PlaceholderClient<>();
+    PlaceholderClient<ToDoEntity> toDoEntityPlaceholderClient(PlaceholderClientProperties props) {
+        return new PlaceholderClient<>(props);
     }
 
     @Bean
-    PlaceholderClient<CommentEntity> commentEntityPlaceholderClient() {
-        return new PlaceholderClient<>();
+    PlaceholderClient<CommentEntity> commentEntityPlaceholderClient(PlaceholderClientProperties props) {
+        return new PlaceholderClient<>(props);
     }
 
     @Bean
-    PlaceholderClient<UserEntity> userEntityPlaceholderClient() {
-        return new PlaceholderClient<>();
+    PlaceholderClient<UserEntity> userEntityPlaceholderClient(PlaceholderClientProperties props) {
+        return new PlaceholderClient<>(props);
     }
 
     @Bean
     @Autowired
     SummaryService summaryService(PlaceholderClient<ToDoEntity> tdeClient, PlaceholderClient<CommentEntity> ceClient, PlaceholderClient<UserEntity> uClient) {
         return new SummaryService(tdeClient, ceClient, uClient);
+    }
+
+    @Bean
+    PlaceholderClientProperties placeholderClientProperties() {
+        return new PlaceholderClientProperties();
     }
 }
