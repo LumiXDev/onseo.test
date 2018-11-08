@@ -21,7 +21,7 @@ import static org.mockito.Mockito.when;
 public class MockSampleTest {
     //Mocks
     @Mock
-    private PlaceholderClient<ToDoEntity> toDoEntityPlaceholderClient;
+    private PlaceholderClient<ToDoEntity> toDoEntityPlaceholderClientMock;
     @Mock
     private PlaceholderClient<CommentEntity> commentEntityPlaceholderClientMock;
     @Mock
@@ -32,13 +32,25 @@ public class MockSampleTest {
     @Before
     public void setup()
     {
-        when(toDoEntityPlaceholderClient.getEntity(Matchers.anyInt(), any(), any())).thenReturn(generateStubEntity());
-        summaryService = new SummaryService(toDoEntityPlaceholderClient, commentEntityPlaceholderClientMock, userEntityPlaceholderClientMock);
+        when(toDoEntityPlaceholderClientMock.getEntity(Matchers.anyInt(), any(), any())).thenReturn(generateStubEntity());
+        summaryService = new SummaryService(toDoEntityPlaceholderClientMock, commentEntityPlaceholderClientMock, userEntityPlaceholderClientMock);
     }
 
     @Test
     public void urlToSampleString() {
-        System.out.println(summaryService.getToDo(111));
+        System.out.println(summaryService.getToDo(10));
+    }
+
+    @Test
+    public void urlToSampleGetSummary() throws InterruptedException {
+
+        System.out.println(summaryService.getEntityAsync(10, "/todos/", ToDoEntity.class));
+        Thread.sleep(500);
+        System.out.println(summaryService.getEntityAsync(8, "/comments/", CommentEntity.class));
+        Thread.sleep(300);
+        System.out.println(summaryService.getEntityAsync(5, "/users/", UserEntity.class));
+        Thread.sleep(400);
+        System.out.println(summaryService.getSummaryAsync(5));
     }
 
     private ToDoEntity generateStubEntity()

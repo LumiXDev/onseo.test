@@ -1,917 +1,207 @@
-INFO  [2018-11-07 11:05:28,604] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: Starting SampleMediumTest on gs20013-macpro.on.seo with PID 910 (started by vsokolovskyi in /Users/vsokolovskyi/git_repos/onseo.test.cache/onseo.test)
-INFO  [2018-11-07 11:05:28,607] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: The following profiles are active: mediumtest
-INFO  [2018-11-07 11:05:28,927] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@61bcd567: startup date [Wed Nov 07 13:05:28 EET 2018]; root of context hierarchy
-INFO  [2018-11-07 11:05:29,234] [requestId=NA] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-WARN  [2018-11-07 11:05:29,266] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.context.ApplicationContextException: Unable to start ServletWebServerApplicationContext due to missing ServletWebServerFactory bean.
-ERROR [2018-11-07 11:05:29,278] [requestId=NA] org.springframework.boot.SpringApplication: Application run failed
-org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.context.ApplicationContextException: Unable to start ServletWebServerApplicationContext due to missing ServletWebServerFactory bean.
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:155)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:386)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:127)
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117)
-	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:108)
-	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.postProcessFields(MockitoTestExecutionListener.java:99)
-	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.injectFields(MockitoTestExecutionListener.java:79)
-	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.prepareTestInstance(MockitoTestExecutionListener.java:54)
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
-	at com.github.tomakehurst.wiremock.junit.WireMockClassRule$1.evaluate(WireMockClassRule.java:70)
-	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
-	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
-	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
-	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
-	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
-	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
-Caused by: org.springframework.context.ApplicationContextException: Unable to start ServletWebServerApplicationContext due to missing ServletWebServerFactory bean.
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getWebServerFactory(ServletWebServerApplicationContext.java:204)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:178)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:152)
-	... 35 common frames omitted
-ERROR [2018-11-07 11:05:29,280] [requestId=NA] org.springframework.test.context.TestContextManager: Caught exception while allowing TestExecutionListener [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@623a8092] to prepare test instance [onseo.jerseytest.functional.SampleMediumTest@726a6b94]
-java.lang.IllegalStateException: Failed to load ApplicationContext
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:125)
-	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:108)
-	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.postProcessFields(MockitoTestExecutionListener.java:99)
-	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.injectFields(MockitoTestExecutionListener.java:79)
-	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.prepareTestInstance(MockitoTestExecutionListener.java:54)
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
-	at com.github.tomakehurst.wiremock.junit.WireMockClassRule$1.evaluate(WireMockClassRule.java:70)
-	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
-	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
-	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
-	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
-	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
-	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
-Caused by: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.context.ApplicationContextException: Unable to start ServletWebServerApplicationContext due to missing ServletWebServerFactory bean.
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:155)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:386)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:127)
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117)
-	... 27 common frames omitted
-Caused by: org.springframework.context.ApplicationContextException: Unable to start ServletWebServerApplicationContext due to missing ServletWebServerFactory bean.
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getWebServerFactory(ServletWebServerApplicationContext.java:204)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:178)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:152)
-	... 35 common frames omitted
-INFO  [2018-11-07 11:05:29,305] [requestId=NA] org.eclipse.jetty.server.AbstractConnector: Stopped NetworkTrafficServerConnector@6703facb{HTTP/1.1,[http/1.1]}{0.0.0.0:0}
-INFO  [2018-11-07 11:05:29,307] [requestId=NA] org.eclipse.jetty.server.handler.ContextHandler: Stopped o.e.j.s.ServletContextHandler@598bd2ba{/,null,UNAVAILABLE}
-INFO  [2018-11-07 11:05:29,307] [requestId=NA] org.eclipse.jetty.server.handler.ContextHandler: Stopped o.e.j.s.ServletContextHandler@64bce832{/__admin,null,UNAVAILABLE}
-WARN  [2018-11-07 11:05:29,309] [requestId=NA] org.eclipse.jetty.util.thread.QueuedThreadPool: QueuedThreadPool[qtp2038105753]@797b0699{STOPPING,8<=8<=10,i=0,q=3}[org.eclipse.jetty.util.thread.TryExecutor$$Lambda$43/1404565079@349d0836] Couldn't stop Thread[qtp2038105753-14,5,]
-WARN  [2018-11-07 11:05:29,309] [requestId=NA] org.eclipse.jetty.util.thread.QueuedThreadPool: QueuedThreadPool[qtp2038105753]@797b0699{STOPPING,8<=8<=10,i=0,q=3}[org.eclipse.jetty.util.thread.TryExecutor$$Lambda$43/1404565079@349d0836] Couldn't stop Thread[qtp2038105753-13,5,]
-INFO  [2018-11-07 11:06:38,119] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: Starting SampleMediumTest on gs20013-macpro.on.seo with PID 920 (started by vsokolovskyi in /Users/vsokolovskyi/git_repos/onseo.test.cache/onseo.test)
-INFO  [2018-11-07 11:06:38,119] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: The following profiles are active: mediumtest
-INFO  [2018-11-07 11:06:38,389] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@44c79f32: startup date [Wed Nov 07 13:06:38 EET 2018]; root of context hierarchy
-INFO  [2018-11-07 11:06:39,140] [requestId=NA] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-INFO  [2018-11-07 11:06:39,572] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 0 (http)
-INFO  [2018-11-07 11:06:39,602] [requestId=NA] org.apache.catalina.core.StandardService: Starting service [Tomcat]
-INFO  [2018-11-07 11:06:39,603] [requestId=NA] org.apache.catalina.core.StandardEngine: Starting Servlet Engine: Apache Tomcat/8.5.34
-INFO  [2018-11-07 11:06:39,613] [requestId=NA] org.apache.catalina.core.AprLifecycleListener: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/vsokolovskyi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
-INFO  [2018-11-07 11:06:39,770] [requestId=NA] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-INFO  [2018-11-07 11:06:39,771] [requestId=NA] org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1382 ms
-INFO  [2018-11-07 11:06:40,098] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'characterEncodingFilter' to: [/*]
-INFO  [2018-11-07 11:06:40,099] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'requestContextFilter' to: [/*]
-INFO  [2018-11-07 11:06:40,099] [requestId=NA] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet onseo.jerseytest.config.ResourceConfig mapped to [/*]
-INFO  [2018-11-07 11:06:40,908] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 50092 (http) with context path ''
-INFO  [2018-11-07 11:06:40,912] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: Started SampleMediumTest in 3.247 seconds (JVM running for 5.258)
-INFO  [2018-11-07 11:06:41,827] [requestId=NA] org.eclipse.jetty.server.AbstractConnector: Stopped NetworkTrafficServerConnector@12ed9db6{HTTP/1.1,[http/1.1]}{0.0.0.0:0}
-INFO  [2018-11-07 11:06:41,829] [requestId=NA] org.eclipse.jetty.server.handler.ContextHandler: Stopped o.e.j.s.ServletContextHandler@5dcd8c7a{/,null,UNAVAILABLE}
-INFO  [2018-11-07 11:06:41,829] [requestId=NA] org.eclipse.jetty.server.handler.ContextHandler: Stopped o.e.j.s.ServletContextHandler@7241a47d{/__admin,null,UNAVAILABLE}
-WARN  [2018-11-07 11:06:41,830] [requestId=NA] org.eclipse.jetty.util.thread.QueuedThreadPool: QueuedThreadPool[qtp149225732]@8e50104{STOPPING,8<=8<=10,i=1,q=3}[org.eclipse.jetty.util.thread.TryExecutor$$Lambda$47/2044482328@2a4f8009] Couldn't stop Thread[qtp149225732-13,5,]
-WARN  [2018-11-07 11:06:41,831] [requestId=NA] org.eclipse.jetty.util.thread.QueuedThreadPool: QueuedThreadPool[qtp149225732]@8e50104{STOPPING,8<=8<=10,i=0,q=3}[org.eclipse.jetty.util.thread.TryExecutor$$Lambda$47/2044482328@2a4f8009] Couldn't stop Thread[qtp149225732-12,5,]
-INFO  [2018-11-07 11:06:41,832] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@44c79f32: startup date [Wed Nov 07 13:06:38 EET 2018]; root of context hierarchy
-INFO  [2018-11-07 11:08:12,877] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: Starting SampleMediumTest on gs20013-macpro.on.seo with PID 926 (started by vsokolovskyi in /Users/vsokolovskyi/git_repos/onseo.test.cache/onseo.test)
-INFO  [2018-11-07 11:08:12,877] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: The following profiles are active: mediumtest
-INFO  [2018-11-07 11:08:13,211] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@c7a975a: startup date [Wed Nov 07 13:08:13 EET 2018]; root of context hierarchy
-INFO  [2018-11-07 11:08:13,941] [requestId=NA] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-INFO  [2018-11-07 11:08:14,330] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 0 (http)
-INFO  [2018-11-07 11:08:14,357] [requestId=NA] org.apache.catalina.core.StandardService: Starting service [Tomcat]
-INFO  [2018-11-07 11:08:14,358] [requestId=NA] org.apache.catalina.core.StandardEngine: Starting Servlet Engine: Apache Tomcat/8.5.34
-INFO  [2018-11-07 11:08:14,368] [requestId=NA] org.apache.catalina.core.AprLifecycleListener: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/vsokolovskyi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
-INFO  [2018-11-07 11:08:14,519] [requestId=NA] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-INFO  [2018-11-07 11:08:14,519] [requestId=NA] org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1308 ms
-INFO  [2018-11-07 11:08:14,810] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'characterEncodingFilter' to: [/*]
-INFO  [2018-11-07 11:08:14,810] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'requestContextFilter' to: [/*]
-INFO  [2018-11-07 11:08:14,810] [requestId=NA] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet onseo.jerseytest.config.ResourceConfig mapped to [/*]
-INFO  [2018-11-07 11:08:15,442] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 50107 (http) with context path ''
-INFO  [2018-11-07 11:08:15,447] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: Started SampleMediumTest in 3.084 seconds (JVM running for 5.146)
-INFO  [2018-11-07 11:08:17,173] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.ToDoEntity
-INFO  [2018-11-07 11:08:17,953] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Response from JSON_Placeholder handled successfully
-INFO  [2018-11-07 11:08:18,082] [requestId=NA] org.eclipse.jetty.server.AbstractConnector: Stopped NetworkTrafficServerConnector@1e330820{HTTP/1.1,[http/1.1]}{0.0.0.0:0}
-INFO  [2018-11-07 11:08:18,084] [requestId=NA] org.eclipse.jetty.server.handler.ContextHandler: Stopped o.e.j.s.ServletContextHandler@331acdad{/,null,UNAVAILABLE}
-INFO  [2018-11-07 11:08:18,085] [requestId=NA] org.eclipse.jetty.server.handler.ContextHandler: Stopped o.e.j.s.ServletContextHandler@7e3181aa{/__admin,null,UNAVAILABLE}
-WARN  [2018-11-07 11:08:18,086] [requestId=NA] org.eclipse.jetty.util.thread.QueuedThreadPool: QueuedThreadPool[qtp1168340825]@45a37759{STOPPING,8<=8<=10,i=3,q=5}[org.eclipse.jetty.util.thread.TryExecutor$$Lambda$47/1424698224@54af3cb9] Couldn't stop Thread[qtp1168340825-14,5,]
-WARN  [2018-11-07 11:08:18,086] [requestId=NA] org.eclipse.jetty.util.thread.QueuedThreadPool: QueuedThreadPool[qtp1168340825]@45a37759{STOPPING,8<=8<=10,i=0,q=5}[org.eclipse.jetty.util.thread.TryExecutor$$Lambda$47/1424698224@54af3cb9] Couldn't stop Thread[qtp1168340825-11,5,]
-INFO  [2018-11-07 11:08:18,087] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@c7a975a: startup date [Wed Nov 07 13:08:13 EET 2018]; root of context hierarchy
-INFO  [2018-11-07 11:08:56,638] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: Starting SampleMediumTest on gs20013-macpro.on.seo with PID 931 (started by vsokolovskyi in /Users/vsokolovskyi/git_repos/onseo.test.cache/onseo.test)
-INFO  [2018-11-07 11:08:56,638] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: The following profiles are active: mediumtest
-INFO  [2018-11-07 11:08:56,948] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@ca93621: startup date [Wed Nov 07 13:08:56 EET 2018]; root of context hierarchy
-INFO  [2018-11-07 11:08:57,828] [requestId=NA] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-INFO  [2018-11-07 11:08:58,276] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 0 (http)
-INFO  [2018-11-07 11:08:58,308] [requestId=NA] org.apache.catalina.core.StandardService: Starting service [Tomcat]
-INFO  [2018-11-07 11:08:58,308] [requestId=NA] org.apache.catalina.core.StandardEngine: Starting Servlet Engine: Apache Tomcat/8.5.34
-INFO  [2018-11-07 11:08:58,321] [requestId=NA] org.apache.catalina.core.AprLifecycleListener: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/vsokolovskyi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
-INFO  [2018-11-07 11:08:58,480] [requestId=NA] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-INFO  [2018-11-07 11:08:58,480] [requestId=NA] org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1532 ms
-INFO  [2018-11-07 11:08:58,822] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'characterEncodingFilter' to: [/*]
-INFO  [2018-11-07 11:08:58,823] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'requestContextFilter' to: [/*]
-INFO  [2018-11-07 11:08:58,823] [requestId=NA] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet onseo.jerseytest.config.ResourceConfig mapped to [/*]
-INFO  [2018-11-07 11:08:59,619] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 50119 (http) with context path ''
-INFO  [2018-11-07 11:08:59,624] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: Started SampleMediumTest in 3.503 seconds (JVM running for 6.191)
-INFO  [2018-11-07 11:09:01,858] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.ToDoEntity
-INFO  [2018-11-07 11:09:02,358] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Response from JSON_Placeholder handled successfully
-INFO  [2018-11-07 11:09:28,763] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@ca93621: startup date [Wed Nov 07 13:08:56 EET 2018]; root of context hierarchy
-INFO  [2018-11-07 11:09:52,034] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: Starting SampleMediumTest on gs20013-macpro.on.seo with PID 936 (started by vsokolovskyi in /Users/vsokolovskyi/git_repos/onseo.test.cache/onseo.test)
-INFO  [2018-11-07 11:09:52,035] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: The following profiles are active: mediumtest
-INFO  [2018-11-07 11:09:52,352] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@710d89e2: startup date [Wed Nov 07 13:09:52 EET 2018]; root of context hierarchy
-INFO  [2018-11-07 11:09:53,266] [requestId=NA] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-INFO  [2018-11-07 11:09:53,728] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 0 (http)
-INFO  [2018-11-07 11:09:53,763] [requestId=NA] org.apache.catalina.core.StandardService: Starting service [Tomcat]
-INFO  [2018-11-07 11:09:53,764] [requestId=NA] org.apache.catalina.core.StandardEngine: Starting Servlet Engine: Apache Tomcat/8.5.34
-INFO  [2018-11-07 11:09:53,777] [requestId=NA] org.apache.catalina.core.AprLifecycleListener: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/vsokolovskyi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
-INFO  [2018-11-07 11:09:53,952] [requestId=NA] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-INFO  [2018-11-07 11:09:53,952] [requestId=NA] org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1600 ms
-INFO  [2018-11-07 11:09:54,308] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'characterEncodingFilter' to: [/*]
-INFO  [2018-11-07 11:09:54,308] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'requestContextFilter' to: [/*]
-INFO  [2018-11-07 11:09:54,309] [requestId=NA] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet onseo.jerseytest.config.ResourceConfig mapped to [/*]
-INFO  [2018-11-07 11:09:55,043] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 50131 (http) with context path ''
-INFO  [2018-11-07 11:09:55,049] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: Started SampleMediumTest in 3.541 seconds (JVM running for 6.127)
-INFO  [2018-11-07 11:09:57,241] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.ToDoEntity
-INFO  [2018-11-07 11:09:57,772] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Response from JSON_Placeholder handled successfully
-INFO  [2018-11-07 11:10:35,594] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@710d89e2: startup date [Wed Nov 07 13:09:52 EET 2018]; root of context hierarchy
-INFO  [2018-11-07 11:13:12,841] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: Starting SampleMediumTest on gs20013-macpro.on.seo with PID 943 (started by vsokolovskyi in /Users/vsokolovskyi/git_repos/onseo.test.cache/onseo.test)
-INFO  [2018-11-07 11:13:12,842] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: The following profiles are active: mediumtest
-INFO  [2018-11-07 11:13:13,164] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2eb917d0: startup date [Wed Nov 07 13:13:13 EET 2018]; root of context hierarchy
-INFO  [2018-11-07 11:13:14,055] [requestId=NA] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-INFO  [2018-11-07 11:13:14,543] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 0 (http)
-INFO  [2018-11-07 11:13:14,577] [requestId=NA] org.apache.catalina.core.StandardService: Starting service [Tomcat]
-INFO  [2018-11-07 11:13:14,578] [requestId=NA] org.apache.catalina.core.StandardEngine: Starting Servlet Engine: Apache Tomcat/8.5.34
-INFO  [2018-11-07 11:13:14,592] [requestId=NA] org.apache.catalina.core.AprLifecycleListener: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/vsokolovskyi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
-INFO  [2018-11-07 11:13:14,756] [requestId=NA] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-INFO  [2018-11-07 11:13:14,757] [requestId=NA] org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1593 ms
-INFO  [2018-11-07 11:13:15,093] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'characterEncodingFilter' to: [/*]
-INFO  [2018-11-07 11:13:15,094] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'requestContextFilter' to: [/*]
-INFO  [2018-11-07 11:13:15,094] [requestId=NA] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet onseo.jerseytest.config.ResourceConfig mapped to [/*]
-INFO  [2018-11-07 11:13:15,838] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 50151 (http) with context path ''
-INFO  [2018-11-07 11:13:15,843] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: Started SampleMediumTest in 3.497 seconds (JVM running for 6.058)
-INFO  [2018-11-07 11:13:18,059] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.ToDoEntity
-ERROR [2018-11-07 11:13:18,068] [requestId=NA] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[onseo.jerseytest.config.ResourceConfig]: Servlet.service() for servlet [onseo.jerseytest.config.ResourceConfig] in context with path [] threw exception [java.lang.NullPointerException] with root cause
-java.lang.NullPointerException: null
-	at onseo.jerseytest.infrastructure.dao.PlaceholderClient.getEntity(PlaceholderClient.java:26)
-	at onseo.jerseytest.services.SummaryService.getToDo(SummaryService.java:19)
-	at onseo.jerseytest.SampleEndpoint.sampleToDo(SampleEndpoint.java:35)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory.lambda$static$0(ResourceMethodInvocationHandlerFactory.java:76)
-	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:148)
-	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:191)
-	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$TypeOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:243)
-	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:103)
-	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:493)
-	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:415)
-	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:104)
-	at org.glassfish.jersey.server.ServerRuntime$1.run(ServerRuntime.java:277)
-	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:272)
-	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:268)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:316)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:298)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:268)
-	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:289)
-	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:256)
-	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:703)
-	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:416)
-	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:370)
-	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:389)
-	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:342)
-	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:229)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-INFO  [2018-11-07 11:13:18,208] [requestId=NA] org.eclipse.jetty.server.AbstractConnector: Stopped NetworkTrafficServerConnector@7b125025{HTTP/1.1,[http/1.1]}{0.0.0.0:0}
-INFO  [2018-11-07 11:13:18,210] [requestId=NA] org.eclipse.jetty.server.handler.ContextHandler: Stopped o.e.j.s.ServletContextHandler@7e8a46b7{/,null,UNAVAILABLE}
-INFO  [2018-11-07 11:13:18,211] [requestId=NA] org.eclipse.jetty.server.handler.ContextHandler: Stopped o.e.j.s.ServletContextHandler@52a36910{/__admin,null,UNAVAILABLE}
-WARN  [2018-11-07 11:13:18,212] [requestId=NA] org.eclipse.jetty.util.thread.QueuedThreadPool: QueuedThreadPool[qtp962700314]@3961a41a{STOPPING,8<=8<=10,i=0,q=4}[org.eclipse.jetty.util.thread.TryExecutor$$Lambda$47/238467882@1bd59b82] Couldn't stop Thread[qtp962700314-16,5,]
-WARN  [2018-11-07 11:13:18,213] [requestId=NA] org.eclipse.jetty.util.thread.QueuedThreadPool: QueuedThreadPool[qtp962700314]@3961a41a{STOPPING,8<=8<=10,i=0,q=4}[org.eclipse.jetty.util.thread.TryExecutor$$Lambda$47/238467882@1bd59b82] Couldn't stop Thread[qtp962700314-13,5,]
-INFO  [2018-11-07 11:13:18,214] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2eb917d0: startup date [Wed Nov 07 13:13:13 EET 2018]; root of context hierarchy
-INFO  [2018-11-07 11:13:33,791] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: Starting SampleMediumTest on gs20013-macpro.on.seo with PID 947 (started by vsokolovskyi in /Users/vsokolovskyi/git_repos/onseo.test.cache/onseo.test)
-INFO  [2018-11-07 11:13:33,791] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: The following profiles are active: mediumtest
-INFO  [2018-11-07 11:13:34,105] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@c6b2dd9: startup date [Wed Nov 07 13:13:34 EET 2018]; root of context hierarchy
-INFO  [2018-11-07 11:13:35,035] [requestId=NA] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-INFO  [2018-11-07 11:13:35,513] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 0 (http)
-INFO  [2018-11-07 11:13:35,551] [requestId=NA] org.apache.catalina.core.StandardService: Starting service [Tomcat]
-INFO  [2018-11-07 11:13:35,552] [requestId=NA] org.apache.catalina.core.StandardEngine: Starting Servlet Engine: Apache Tomcat/8.5.34
-INFO  [2018-11-07 11:13:35,566] [requestId=NA] org.apache.catalina.core.AprLifecycleListener: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/vsokolovskyi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
-INFO  [2018-11-07 11:13:35,735] [requestId=NA] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-INFO  [2018-11-07 11:13:35,735] [requestId=NA] org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1630 ms
-INFO  [2018-11-07 11:13:36,073] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'characterEncodingFilter' to: [/*]
-INFO  [2018-11-07 11:13:36,073] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'requestContextFilter' to: [/*]
-INFO  [2018-11-07 11:13:36,074] [requestId=NA] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet onseo.jerseytest.config.ResourceConfig mapped to [/*]
-INFO  [2018-11-07 11:13:36,781] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 50160 (http) with context path ''
-INFO  [2018-11-07 11:13:36,786] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: Started SampleMediumTest in 3.5 seconds (JVM running for 6.051)
-INFO  [2018-11-07 11:13:39,484] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.ToDoEntity
-ERROR [2018-11-07 11:13:39,497] [requestId=NA] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[onseo.jerseytest.config.ResourceConfig]: Servlet.service() for servlet [onseo.jerseytest.config.ResourceConfig] in context with path [] threw exception [java.lang.NullPointerException] with root cause
-java.lang.NullPointerException: null
-	at onseo.jerseytest.infrastructure.dao.PlaceholderClient.getEntity(PlaceholderClient.java:26)
-	at onseo.jerseytest.services.SummaryService.getToDo(SummaryService.java:19)
-	at onseo.jerseytest.SampleEndpoint.sampleToDo(SampleEndpoint.java:35)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory.lambda$static$0(ResourceMethodInvocationHandlerFactory.java:76)
-	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:148)
-	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:191)
-	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$TypeOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:243)
-	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:103)
-	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:493)
-	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:415)
-	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:104)
-	at org.glassfish.jersey.server.ServerRuntime$1.run(ServerRuntime.java:277)
-	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:272)
-	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:268)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:316)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:298)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:268)
-	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:289)
-	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:256)
-	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:703)
-	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:416)
-	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:370)
-	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:389)
-	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:342)
-	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:229)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-INFO  [2018-11-07 11:13:39,796] [requestId=NA] org.eclipse.jetty.server.AbstractConnector: Stopped NetworkTrafficServerConnector@664516e4{HTTP/1.1,[http/1.1]}{0.0.0.0:0}
-INFO  [2018-11-07 11:13:39,806] [requestId=NA] org.eclipse.jetty.server.handler.ContextHandler: Stopped o.e.j.s.ServletContextHandler@2fe88a09{/,null,UNAVAILABLE}
-INFO  [2018-11-07 11:13:39,807] [requestId=NA] org.eclipse.jetty.server.handler.ContextHandler: Stopped o.e.j.s.ServletContextHandler@3a095ec0{/__admin,null,UNAVAILABLE}
-INFO  [2018-11-07 11:13:39,810] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@c6b2dd9: startup date [Wed Nov 07 13:13:34 EET 2018]; root of context hierarchy
-INFO  [2018-11-07 11:15:37,258] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: Starting SampleMediumTest on gs20013-macpro.on.seo with PID 956 (started by vsokolovskyi in /Users/vsokolovskyi/git_repos/onseo.test.cache/onseo.test)
-INFO  [2018-11-07 11:15:37,259] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: The following profiles are active: mediumtest
-INFO  [2018-11-07 11:15:37,621] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1c5c616f: startup date [Wed Nov 07 13:15:37 EET 2018]; root of context hierarchy
-INFO  [2018-11-07 11:15:38,499] [requestId=NA] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-INFO  [2018-11-07 11:15:38,956] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 0 (http)
-INFO  [2018-11-07 11:15:38,992] [requestId=NA] org.apache.catalina.core.StandardService: Starting service [Tomcat]
-INFO  [2018-11-07 11:15:38,992] [requestId=NA] org.apache.catalina.core.StandardEngine: Starting Servlet Engine: Apache Tomcat/8.5.34
-INFO  [2018-11-07 11:15:39,006] [requestId=NA] org.apache.catalina.core.AprLifecycleListener: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/vsokolovskyi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
-INFO  [2018-11-07 11:15:39,179] [requestId=NA] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-INFO  [2018-11-07 11:15:39,179] [requestId=NA] org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1558 ms
-INFO  [2018-11-07 11:15:39,517] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'characterEncodingFilter' to: [/*]
-INFO  [2018-11-07 11:15:39,517] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'requestContextFilter' to: [/*]
-INFO  [2018-11-07 11:15:39,518] [requestId=NA] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet onseo.jerseytest.config.ResourceConfig mapped to [/*]
-INFO  [2018-11-07 11:15:40,275] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 50175 (http) with context path ''
-INFO  [2018-11-07 11:15:40,280] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: Started SampleMediumTest in 3.502 seconds (JVM running for 6.036)
-INFO  [2018-11-07 11:15:42,506] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.ToDoEntity
-INFO  [2018-11-07 11:16:08,787] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1c5c616f: startup date [Wed Nov 07 13:15:37 EET 2018]; root of context hierarchy
-INFO  [2018-11-07 11:16:13,785] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: Starting SampleMediumTest on gs20013-macpro.on.seo with PID 960 (started by vsokolovskyi in /Users/vsokolovskyi/git_repos/onseo.test.cache/onseo.test)
-INFO  [2018-11-07 11:16:13,786] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: The following profiles are active: mediumtest
-INFO  [2018-11-07 11:16:14,114] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@ca93621: startup date [Wed Nov 07 13:16:14 EET 2018]; root of context hierarchy
-INFO  [2018-11-07 11:16:15,007] [requestId=NA] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-INFO  [2018-11-07 11:16:15,485] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 0 (http)
-INFO  [2018-11-07 11:16:15,519] [requestId=NA] org.apache.catalina.core.StandardService: Starting service [Tomcat]
-INFO  [2018-11-07 11:16:15,519] [requestId=NA] org.apache.catalina.core.StandardEngine: Starting Servlet Engine: Apache Tomcat/8.5.34
-INFO  [2018-11-07 11:16:15,532] [requestId=NA] org.apache.catalina.core.AprLifecycleListener: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/vsokolovskyi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
-INFO  [2018-11-07 11:16:15,695] [requestId=NA] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-INFO  [2018-11-07 11:16:15,696] [requestId=NA] org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1582 ms
-INFO  [2018-11-07 11:16:16,051] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'characterEncodingFilter' to: [/*]
-INFO  [2018-11-07 11:16:16,052] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'requestContextFilter' to: [/*]
-INFO  [2018-11-07 11:16:16,052] [requestId=NA] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet onseo.jerseytest.config.ResourceConfig mapped to [/*]
-INFO  [2018-11-07 11:16:16,755] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 50182 (http) with context path ''
-INFO  [2018-11-07 11:16:16,761] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: Started SampleMediumTest in 3.491 seconds (JVM running for 6.106)
-INFO  [2018-11-07 11:16:19,022] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.ToDoEntity
-ERROR [2018-11-07 11:16:33,705] [requestId=NA] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[onseo.jerseytest.config.ResourceConfig]: Servlet.service() for servlet [onseo.jerseytest.config.ResourceConfig] in context with path [] threw exception [javax.ws.rs.ProcessingException: javax.net.ssl.SSLException: Unrecognized SSL message, plaintext connection?] with root cause
-javax.net.ssl.SSLException: Unrecognized SSL message, plaintext connection?
-	at sun.security.ssl.InputRecord.handleUnknownRecord(InputRecord.java:710)
-	at sun.security.ssl.InputRecord.read(InputRecord.java:527)
-	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:975)
-	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1367)
-	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1395)
-	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1379)
-	at sun.net.www.protocol.https.HttpsClient.afterConnect(HttpsClient.java:559)
-	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:185)
-	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1564)
-	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492)
-	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
-	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:347)
-	at org.glassfish.jersey.client.internal.HttpUrlConnector._apply(HttpUrlConnector.java:390)
-	at org.glassfish.jersey.client.internal.HttpUrlConnector.apply(HttpUrlConnector.java:282)
-	at org.glassfish.jersey.client.ClientRuntime.invoke(ClientRuntime.java:278)
-	at org.glassfish.jersey.client.JerseyInvocation.lambda$invoke$0(JerseyInvocation.java:753)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:316)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:298)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:229)
-	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:414)
-	at org.glassfish.jersey.client.JerseyInvocation.invoke(JerseyInvocation.java:752)
-	at org.glassfish.jersey.client.JerseyInvocation$Builder.method(JerseyInvocation.java:419)
-	at org.glassfish.jersey.client.JerseyInvocation$Builder.get(JerseyInvocation.java:319)
-	at onseo.jerseytest.infrastructure.dao.PlaceholderClient.getEntity(PlaceholderClient.java:30)
-	at onseo.jerseytest.services.SummaryService.getToDo(SummaryService.java:19)
-	at onseo.jerseytest.SampleEndpoint.sampleToDo(SampleEndpoint.java:35)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory.lambda$static$0(ResourceMethodInvocationHandlerFactory.java:76)
-	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:148)
-	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:191)
-	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$TypeOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:243)
-	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:103)
-	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:493)
-	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:415)
-	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:104)
-	at org.glassfish.jersey.server.ServerRuntime$1.run(ServerRuntime.java:277)
-	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:272)
-	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:268)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:316)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:298)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:268)
-	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:289)
-	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:256)
-	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:703)
-	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:416)
-	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:370)
-	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:389)
-	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:342)
-	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:229)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-INFO  [2018-11-07 11:16:33,844] [requestId=NA] org.eclipse.jetty.server.AbstractConnector: Stopped NetworkTrafficServerConnector@65cc8228{HTTP/1.1,[http/1.1]}{0.0.0.0:0}
-INFO  [2018-11-07 11:16:33,846] [requestId=NA] org.eclipse.jetty.server.handler.ContextHandler: Stopped o.e.j.s.ServletContextHandler@2fe88a09{/,null,UNAVAILABLE}
-INFO  [2018-11-07 11:16:33,847] [requestId=NA] org.eclipse.jetty.server.handler.ContextHandler: Stopped o.e.j.s.ServletContextHandler@3a095ec0{/__admin,null,UNAVAILABLE}
-INFO  [2018-11-07 11:16:33,850] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@ca93621: startup date [Wed Nov 07 13:16:14 EET 2018]; root of context hierarchy
-INFO  [2018-11-07 11:17:02,536] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: Starting SampleMediumTest on gs20013-macpro.on.seo with PID 966 (started by vsokolovskyi in /Users/vsokolovskyi/git_repos/onseo.test.cache/onseo.test)
-INFO  [2018-11-07 11:17:02,537] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: The following profiles are active: mediumtest
-INFO  [2018-11-07 11:17:02,840] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@444cc791: startup date [Wed Nov 07 13:17:02 EET 2018]; root of context hierarchy
-INFO  [2018-11-07 11:17:03,716] [requestId=NA] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-INFO  [2018-11-07 11:17:04,157] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 0 (http)
-INFO  [2018-11-07 11:17:04,190] [requestId=NA] org.apache.catalina.core.StandardService: Starting service [Tomcat]
-INFO  [2018-11-07 11:17:04,190] [requestId=NA] org.apache.catalina.core.StandardEngine: Starting Servlet Engine: Apache Tomcat/8.5.34
-INFO  [2018-11-07 11:17:04,202] [requestId=NA] org.apache.catalina.core.AprLifecycleListener: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/vsokolovskyi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
-INFO  [2018-11-07 11:17:04,368] [requestId=NA] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-INFO  [2018-11-07 11:17:04,368] [requestId=NA] org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1528 ms
-INFO  [2018-11-07 11:17:04,705] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'characterEncodingFilter' to: [/*]
-INFO  [2018-11-07 11:17:04,706] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'requestContextFilter' to: [/*]
-INFO  [2018-11-07 11:17:04,706] [requestId=NA] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet onseo.jerseytest.config.ResourceConfig mapped to [/*]
-INFO  [2018-11-07 11:17:05,463] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 50195 (http) with context path ''
-INFO  [2018-11-07 11:17:05,468] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: Started SampleMediumTest in 3.408 seconds (JVM running for 5.947)
-INFO  [2018-11-07 11:17:07,657] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.ToDoEntity
-INFO  [2018-11-07 11:17:07,950] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Response from JSON_Placeholder handled successfully
-INFO  [2018-11-07 11:17:08,095] [requestId=NA] org.eclipse.jetty.server.AbstractConnector: Stopped NetworkTrafficServerConnector@583c42e1{HTTP/1.1,[http/1.1]}{0.0.0.0:0}
-INFO  [2018-11-07 11:17:08,097] [requestId=NA] org.eclipse.jetty.server.handler.ContextHandler: Stopped o.e.j.s.ServletContextHandler@7e8a46b7{/,null,UNAVAILABLE}
-INFO  [2018-11-07 11:17:08,097] [requestId=NA] org.eclipse.jetty.server.handler.ContextHandler: Stopped o.e.j.s.ServletContextHandler@52a36910{/__admin,null,UNAVAILABLE}
-INFO  [2018-11-07 11:17:08,100] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@444cc791: startup date [Wed Nov 07 13:17:02 EET 2018]; root of context hierarchy
-INFO  [2018-11-07 11:17:56,610] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: Starting SampleMediumTest on gs20013-macpro.on.seo with PID 974 (started by vsokolovskyi in /Users/vsokolovskyi/git_repos/onseo.test.cache/onseo.test)
-INFO  [2018-11-07 11:17:56,611] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: The following profiles are active: mediumtest
-INFO  [2018-11-07 11:17:56,916] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3fbcfe81: startup date [Wed Nov 07 13:17:56 EET 2018]; root of context hierarchy
-INFO  [2018-11-07 11:17:57,778] [requestId=NA] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-INFO  [2018-11-07 11:17:58,204] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 0 (http)
-INFO  [2018-11-07 11:17:58,237] [requestId=NA] org.apache.catalina.core.StandardService: Starting service [Tomcat]
-INFO  [2018-11-07 11:17:58,237] [requestId=NA] org.apache.catalina.core.StandardEngine: Starting Servlet Engine: Apache Tomcat/8.5.34
-INFO  [2018-11-07 11:17:58,249] [requestId=NA] org.apache.catalina.core.AprLifecycleListener: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/vsokolovskyi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
-INFO  [2018-11-07 11:17:58,412] [requestId=NA] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-INFO  [2018-11-07 11:17:58,412] [requestId=NA] org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1497 ms
-INFO  [2018-11-07 11:17:58,742] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'characterEncodingFilter' to: [/*]
-INFO  [2018-11-07 11:17:58,743] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'requestContextFilter' to: [/*]
-INFO  [2018-11-07 11:17:58,743] [requestId=NA] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet onseo.jerseytest.config.ResourceConfig mapped to [/*]
-INFO  [2018-11-07 11:17:59,456] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 50211 (http) with context path ''
-INFO  [2018-11-07 11:17:59,461] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: Started SampleMediumTest in 3.336 seconds (JVM running for 5.883)
-ERROR [2018-11-07 11:17:59,499] [requestId=NA] org.springframework.test.context.TestContextManager: Caught exception while allowing TestExecutionListener [org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@54e22bdd] to prepare test instance [onseo.jerseytest.functional.SampleMediumTest@7d522180]
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'onseo.jerseytest.functional.SampleMediumTest': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'testcontext.requestURI' in value "${testcontext.requestURI}"
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:376)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1336)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:393)
-	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:118)
-	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
-	at org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener.prepareTestInstance(SpringBootDependencyInjectionTestExecutionListener.java:44)
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
-	at com.github.tomakehurst.wiremock.junit.WireMockClassRule$1.evaluate(WireMockClassRule.java:70)
-	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
-	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
-	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
-	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
-	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
-	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
-Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'testcontext.requestURI' in value "${testcontext.requestURI}"
-	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:172)
-	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:124)
-	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:237)
-	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:211)
-	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:175)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:839)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1083)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1062)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:581)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:370)
-	... 28 common frames omitted
-INFO  [2018-11-07 11:17:59,551] [requestId=NA] org.eclipse.jetty.server.AbstractConnector: Stopped NetworkTrafficServerConnector@583c42e1{HTTP/1.1,[http/1.1]}{0.0.0.0:0}
-INFO  [2018-11-07 11:17:59,552] [requestId=NA] org.eclipse.jetty.server.handler.ContextHandler: Stopped o.e.j.s.ServletContextHandler@4f20a5e0{/,null,UNAVAILABLE}
-INFO  [2018-11-07 11:17:59,553] [requestId=NA] org.eclipse.jetty.server.handler.ContextHandler: Stopped o.e.j.s.ServletContextHandler@6d2d99fc{/__admin,null,UNAVAILABLE}
-WARN  [2018-11-07 11:17:59,554] [requestId=NA] org.eclipse.jetty.util.thread.QueuedThreadPool: QueuedThreadPool[qtp450589816]@1adb7478{STOPPING,8<=8<=10,i=0,q=2}[org.eclipse.jetty.util.thread.TryExecutor$$Lambda$47/296234255@14485747] Couldn't stop Thread[qtp450589816-13,5,]
-WARN  [2018-11-07 11:17:59,554] [requestId=NA] org.eclipse.jetty.util.thread.QueuedThreadPool: QueuedThreadPool[qtp450589816]@1adb7478{STOPPING,8<=8<=10,i=0,q=2}[org.eclipse.jetty.util.thread.TryExecutor$$Lambda$47/296234255@14485747] Couldn't stop Thread[qtp450589816-14,5,]
-INFO  [2018-11-07 11:17:59,556] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3fbcfe81: startup date [Wed Nov 07 13:17:56 EET 2018]; root of context hierarchy
-INFO  [2018-11-07 11:19:09,679] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: Starting SampleMediumTest on gs20013-macpro.on.seo with PID 982 (started by vsokolovskyi in /Users/vsokolovskyi/git_repos/onseo.test.cache/onseo.test)
-INFO  [2018-11-07 11:19:09,680] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: The following profiles are active: mediumtest
-INFO  [2018-11-07 11:19:09,980] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5eb2172: startup date [Wed Nov 07 13:19:09 EET 2018]; root of context hierarchy
-INFO  [2018-11-07 11:19:10,851] [requestId=NA] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-INFO  [2018-11-07 11:19:11,310] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 0 (http)
-INFO  [2018-11-07 11:19:11,343] [requestId=NA] org.apache.catalina.core.StandardService: Starting service [Tomcat]
-INFO  [2018-11-07 11:19:11,343] [requestId=NA] org.apache.catalina.core.StandardEngine: Starting Servlet Engine: Apache Tomcat/8.5.34
-INFO  [2018-11-07 11:19:11,356] [requestId=NA] org.apache.catalina.core.AprLifecycleListener: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/vsokolovskyi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
-INFO  [2018-11-07 11:19:11,515] [requestId=NA] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-INFO  [2018-11-07 11:19:11,516] [requestId=NA] org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1536 ms
-INFO  [2018-11-07 11:19:11,854] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'characterEncodingFilter' to: [/*]
-INFO  [2018-11-07 11:19:11,855] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'requestContextFilter' to: [/*]
-INFO  [2018-11-07 11:19:11,855] [requestId=NA] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet onseo.jerseytest.config.ResourceConfig mapped to [/*]
-INFO  [2018-11-07 11:19:12,620] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 50222 (http) with context path ''
-INFO  [2018-11-07 11:19:12,625] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: Started SampleMediumTest in 3.429 seconds (JVM running for 5.972)
-INFO  [2018-11-07 11:19:14,805] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.ToDoEntity
-ERROR [2018-11-07 11:19:14,933] [requestId=NA] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[onseo.jerseytest.config.ResourceConfig]: Servlet.service() for servlet [onseo.jerseytest.config.ResourceConfig] in context with path [] threw exception [javax.ws.rs.ProcessingException: java.net.ConnectException: Connection refused (Connection refused)] with root cause
-java.net.ConnectException: Connection refused (Connection refused)
-	at java.net.PlainSocketImpl.socketConnect(Native Method)
-	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-	at java.net.Socket.connect(Socket.java:589)
-	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
-	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
-	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
-	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
-	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
-	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
-	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1220)
-	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1156)
-	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1050)
-	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:984)
-	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1564)
-	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492)
-	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
-	at org.glassfish.jersey.client.internal.HttpUrlConnector._apply(HttpUrlConnector.java:390)
-	at org.glassfish.jersey.client.internal.HttpUrlConnector.apply(HttpUrlConnector.java:282)
-	at org.glassfish.jersey.client.ClientRuntime.invoke(ClientRuntime.java:278)
-	at org.glassfish.jersey.client.JerseyInvocation.lambda$invoke$0(JerseyInvocation.java:753)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:316)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:298)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:229)
-	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:414)
-	at org.glassfish.jersey.client.JerseyInvocation.invoke(JerseyInvocation.java:752)
-	at org.glassfish.jersey.client.JerseyInvocation$Builder.method(JerseyInvocation.java:419)
-	at org.glassfish.jersey.client.JerseyInvocation$Builder.get(JerseyInvocation.java:319)
-	at onseo.jerseytest.infrastructure.dao.PlaceholderClient.getEntity(PlaceholderClient.java:30)
-	at onseo.jerseytest.services.SummaryService.getToDo(SummaryService.java:19)
-	at onseo.jerseytest.SampleEndpoint.sampleToDo(SampleEndpoint.java:35)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory.lambda$static$0(ResourceMethodInvocationHandlerFactory.java:76)
-	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:148)
-	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:191)
-	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$TypeOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:243)
-	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:103)
-	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:493)
-	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:415)
-	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:104)
-	at org.glassfish.jersey.server.ServerRuntime$1.run(ServerRuntime.java:277)
-	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:272)
-	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:268)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:316)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:298)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:268)
-	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:289)
-	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:256)
-	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:703)
-	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:416)
-	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:370)
-	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:389)
-	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:342)
-	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:229)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-INFO  [2018-11-07 11:19:15,086] [requestId=NA] org.eclipse.jetty.server.AbstractConnector: Stopped NetworkTrafficServerConnector@627a8ef4{HTTP/1.1,[http/1.1]}{0.0.0.0:0}
-INFO  [2018-11-07 11:19:15,089] [requestId=NA] org.eclipse.jetty.server.handler.ContextHandler: Stopped o.e.j.s.ServletContextHandler@7e8a46b7{/,null,UNAVAILABLE}
-INFO  [2018-11-07 11:19:15,090] [requestId=NA] org.eclipse.jetty.server.handler.ContextHandler: Stopped o.e.j.s.ServletContextHandler@52a36910{/__admin,null,UNAVAILABLE}
-INFO  [2018-11-07 11:19:15,093] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5eb2172: startup date [Wed Nov 07 13:19:09 EET 2018]; root of context hierarchy
-INFO  [2018-11-07 11:19:27,916] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: Starting SampleMediumTest on gs20013-macpro.on.seo with PID 986 (started by vsokolovskyi in /Users/vsokolovskyi/git_repos/onseo.test.cache/onseo.test)
-INFO  [2018-11-07 11:19:27,917] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: The following profiles are active: mediumtest
-INFO  [2018-11-07 11:19:28,229] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@38a1a26: startup date [Wed Nov 07 13:19:28 EET 2018]; root of context hierarchy
-INFO  [2018-11-07 11:19:29,135] [requestId=NA] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-INFO  [2018-11-07 11:19:29,590] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 0 (http)
-INFO  [2018-11-07 11:19:29,623] [requestId=NA] org.apache.catalina.core.StandardService: Starting service [Tomcat]
-INFO  [2018-11-07 11:19:29,623] [requestId=NA] org.apache.catalina.core.StandardEngine: Starting Servlet Engine: Apache Tomcat/8.5.34
-INFO  [2018-11-07 11:19:29,635] [requestId=NA] org.apache.catalina.core.AprLifecycleListener: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/vsokolovskyi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
-INFO  [2018-11-07 11:19:29,793] [requestId=NA] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-INFO  [2018-11-07 11:19:29,794] [requestId=NA] org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1565 ms
-INFO  [2018-11-07 11:19:30,131] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'characterEncodingFilter' to: [/*]
-INFO  [2018-11-07 11:19:30,132] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'requestContextFilter' to: [/*]
-INFO  [2018-11-07 11:19:30,132] [requestId=NA] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet onseo.jerseytest.config.ResourceConfig mapped to [/*]
-INFO  [2018-11-07 11:19:30,855] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 50231 (http) with context path ''
-INFO  [2018-11-07 11:19:30,861] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: Started SampleMediumTest in 3.404 seconds (JVM running for 5.868)
-INFO  [2018-11-07 11:19:33,142] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.ToDoEntity
-INFO  [2018-11-07 11:19:38,441] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@38a1a26: startup date [Wed Nov 07 13:19:28 EET 2018]; root of context hierarchy
-INFO  [2018-11-07 11:19:38,629] [requestId=NA] org.apache.http.impl.client.DefaultHttpClient: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://localhost:50231: The target server failed to respond
-INFO  [2018-11-07 11:19:38,629] [requestId=NA] org.apache.http.impl.client.DefaultHttpClient: Retrying request to {}->http://localhost:50231
-INFO  [2018-11-07 11:19:58,823] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: Starting SampleMediumTest on gs20013-macpro.on.seo with PID 991 (started by vsokolovskyi in /Users/vsokolovskyi/git_repos/onseo.test.cache/onseo.test)
-INFO  [2018-11-07 11:19:58,823] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: The following profiles are active: mediumtest
-INFO  [2018-11-07 11:19:59,139] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5fb65013: startup date [Wed Nov 07 13:19:59 EET 2018]; root of context hierarchy
-INFO  [2018-11-07 11:20:00,021] [requestId=NA] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-INFO  [2018-11-07 11:20:00,483] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 0 (http)
-INFO  [2018-11-07 11:20:00,519] [requestId=NA] org.apache.catalina.core.StandardService: Starting service [Tomcat]
-INFO  [2018-11-07 11:20:00,519] [requestId=NA] org.apache.catalina.core.StandardEngine: Starting Servlet Engine: Apache Tomcat/8.5.34
-INFO  [2018-11-07 11:20:00,533] [requestId=NA] org.apache.catalina.core.AprLifecycleListener: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/vsokolovskyi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
-INFO  [2018-11-07 11:20:00,705] [requestId=NA] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-INFO  [2018-11-07 11:20:00,705] [requestId=NA] org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1566 ms
-INFO  [2018-11-07 11:20:01,048] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'characterEncodingFilter' to: [/*]
-INFO  [2018-11-07 11:20:01,049] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'requestContextFilter' to: [/*]
-INFO  [2018-11-07 11:20:01,049] [requestId=NA] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet onseo.jerseytest.config.ResourceConfig mapped to [/*]
-INFO  [2018-11-07 11:20:01,793] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 50243 (http) with context path ''
-INFO  [2018-11-07 11:20:01,798] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: Started SampleMediumTest in 3.46 seconds (JVM running for 5.992)
-INFO  [2018-11-07 11:20:03,953] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.ToDoEntity
-INFO  [2018-11-07 11:20:14,338] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5fb65013: startup date [Wed Nov 07 13:19:59 EET 2018]; root of context hierarchy
-INFO  [2018-11-07 11:20:14,487] [requestId=NA] org.eclipse.jetty.server.handler.ContextHandler.ROOT: RequestHandlerClass from context returned com.github.tomakehurst.wiremock.http.StubRequestHandler. Normalized mapped under returned 'null'
-INFO  [2018-11-07 11:20:53,770] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: Starting SampleMediumTest on gs20013-macpro.on.seo with PID 995 (started by vsokolovskyi in /Users/vsokolovskyi/git_repos/onseo.test.cache/onseo.test)
-INFO  [2018-11-07 11:20:53,770] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: The following profiles are active: mediumtest
-INFO  [2018-11-07 11:20:54,064] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@38a1a26: startup date [Wed Nov 07 13:20:54 EET 2018]; root of context hierarchy
-INFO  [2018-11-07 11:20:54,976] [requestId=NA] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-INFO  [2018-11-07 11:20:55,425] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 0 (http)
-INFO  [2018-11-07 11:20:55,457] [requestId=NA] org.apache.catalina.core.StandardService: Starting service [Tomcat]
-INFO  [2018-11-07 11:20:55,457] [requestId=NA] org.apache.catalina.core.StandardEngine: Starting Servlet Engine: Apache Tomcat/8.5.34
-INFO  [2018-11-07 11:20:55,470] [requestId=NA] org.apache.catalina.core.AprLifecycleListener: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/vsokolovskyi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
-INFO  [2018-11-07 11:20:55,632] [requestId=NA] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-INFO  [2018-11-07 11:20:55,633] [requestId=NA] org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1569 ms
-INFO  [2018-11-07 11:20:55,979] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'characterEncodingFilter' to: [/*]
-INFO  [2018-11-07 11:20:55,980] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'requestContextFilter' to: [/*]
-INFO  [2018-11-07 11:20:55,980] [requestId=NA] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet onseo.jerseytest.config.ResourceConfig mapped to [/*]
-INFO  [2018-11-07 11:20:56,705] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 50260 (http) with context path ''
-INFO  [2018-11-07 11:20:56,711] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: Started SampleMediumTest in 3.437 seconds (JVM running for 6.033)
-INFO  [2018-11-07 11:22:20,549] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.ToDoEntity
-INFO  [2018-11-07 11:23:44,731] [requestId=NA] org.eclipse.jetty.server.handler.ContextHandler.ROOT: RequestHandlerClass from context returned com.github.tomakehurst.wiremock.http.StubRequestHandler. Normalized mapped under returned 'null'
-INFO  [2018-11-07 11:23:45,010] [requestId=NA] org.eclipse.jetty.server.AbstractConnector: Stopped NetworkTrafficServerConnector@68bf4d08{HTTP/1.1,[http/1.1]}{0.0.0.0:0}
-INFO  [2018-11-07 11:23:45,013] [requestId=NA] org.eclipse.jetty.server.handler.ContextHandler: Stopped o.e.j.s.ServletContextHandler@3a095ec0{/,null,UNAVAILABLE}
-INFO  [2018-11-07 11:23:45,013] [requestId=NA] org.eclipse.jetty.server.handler.ContextHandler: Stopped o.e.j.s.ServletContextHandler@6872f9c8{/__admin,null,UNAVAILABLE}
-WARN  [2018-11-07 11:23:45,015] [requestId=NA] org.eclipse.jetty.util.thread.QueuedThreadPool: QueuedThreadPool[qtp296234255]@11a82d0f{STOPPING,8<=8<=10,i=0,q=4}[org.eclipse.jetty.util.thread.TryExecutor$$Lambda$47/235162442@722b3ba2] Couldn't stop Thread[qtp296234255-13,5,]
-INFO  [2018-11-07 11:23:45,016] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@38a1a26: startup date [Wed Nov 07 13:20:54 EET 2018]; root of context hierarchy
-INFO  [2018-11-07 11:24:31,472] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: Starting SampleMediumTest on gs20013-macpro.on.seo with PID 1000 (started by vsokolovskyi in /Users/vsokolovskyi/git_repos/onseo.test.cache/onseo.test)
-INFO  [2018-11-07 11:24:31,472] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: The following profiles are active: mediumtest
-INFO  [2018-11-07 11:24:31,768] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@53a9fcfd: startup date [Wed Nov 07 13:24:31 EET 2018]; root of context hierarchy
-INFO  [2018-11-07 11:24:32,649] [requestId=NA] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-INFO  [2018-11-07 11:24:33,100] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 0 (http)
-INFO  [2018-11-07 11:24:33,135] [requestId=NA] org.apache.catalina.core.StandardService: Starting service [Tomcat]
-INFO  [2018-11-07 11:24:33,136] [requestId=NA] org.apache.catalina.core.StandardEngine: Starting Servlet Engine: Apache Tomcat/8.5.34
-INFO  [2018-11-07 11:24:33,148] [requestId=NA] org.apache.catalina.core.AprLifecycleListener: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/vsokolovskyi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
-INFO  [2018-11-07 11:24:33,308] [requestId=NA] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-INFO  [2018-11-07 11:24:33,308] [requestId=NA] org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1541 ms
-INFO  [2018-11-07 11:24:33,662] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'characterEncodingFilter' to: [/*]
-INFO  [2018-11-07 11:24:33,663] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'requestContextFilter' to: [/*]
-INFO  [2018-11-07 11:24:33,663] [requestId=NA] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet onseo.jerseytest.config.ResourceConfig mapped to [/*]
-INFO  [2018-11-07 11:24:34,414] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 50281 (http) with context path ''
-INFO  [2018-11-07 11:24:34,420] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: Started SampleMediumTest in 3.423 seconds (JVM running for 6.128)
-INFO  [2018-11-07 11:24:51,928] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.ToDoEntity
-INFO  [2018-11-07 11:24:52,106] [requestId=NA] org.eclipse.jetty.server.handler.ContextHandler.ROOT: RequestHandlerClass from context returned com.github.tomakehurst.wiremock.http.StubRequestHandler. Normalized mapped under returned 'null'
-INFO  [2018-11-07 11:24:52,360] [requestId=NA] org.eclipse.jetty.server.AbstractConnector: Stopped NetworkTrafficServerConnector@40ab8a8{HTTP/1.1,[http/1.1]}{0.0.0.0:0}
-INFO  [2018-11-07 11:24:52,362] [requestId=NA] org.eclipse.jetty.server.handler.ContextHandler: Stopped o.e.j.s.ServletContextHandler@22fba58c{/,null,UNAVAILABLE}
-INFO  [2018-11-07 11:24:52,362] [requestId=NA] org.eclipse.jetty.server.handler.ContextHandler: Stopped o.e.j.s.ServletContextHandler@5d58c727{/__admin,null,UNAVAILABLE}
-WARN  [2018-11-07 11:24:52,363] [requestId=NA] org.eclipse.jetty.util.thread.QueuedThreadPool: QueuedThreadPool[qtp238467882]@e36bb2a{STOPPING,8<=8<=10,i=0,q=3}[org.eclipse.jetty.util.thread.TryExecutor$$Lambda$47/121466124@54b2d002] Couldn't stop Thread[qtp238467882-20,5,]
-WARN  [2018-11-07 11:24:52,364] [requestId=NA] org.eclipse.jetty.util.thread.QueuedThreadPool: QueuedThreadPool[qtp238467882]@e36bb2a{STOPPING,8<=8<=10,i=0,q=3}[org.eclipse.jetty.util.thread.TryExecutor$$Lambda$47/121466124@54b2d002] Couldn't stop Thread[qtp238467882-15,5,]
-INFO  [2018-11-07 11:24:52,365] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@53a9fcfd: startup date [Wed Nov 07 13:24:31 EET 2018]; root of context hierarchy
-INFO  [2018-11-07 11:25:39,423] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: Starting SampleMediumTest on gs20013-macpro.on.seo with PID 1005 (started by vsokolovskyi in /Users/vsokolovskyi/git_repos/onseo.test.cache/onseo.test)
-INFO  [2018-11-07 11:25:39,424] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: The following profiles are active: mediumtest
-INFO  [2018-11-07 11:25:39,752] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@38a1a26: startup date [Wed Nov 07 13:25:39 EET 2018]; root of context hierarchy
-INFO  [2018-11-07 11:25:40,660] [requestId=NA] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-INFO  [2018-11-07 11:25:41,102] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 0 (http)
-INFO  [2018-11-07 11:25:41,134] [requestId=NA] org.apache.catalina.core.StandardService: Starting service [Tomcat]
-INFO  [2018-11-07 11:25:41,135] [requestId=NA] org.apache.catalina.core.StandardEngine: Starting Servlet Engine: Apache Tomcat/8.5.34
-INFO  [2018-11-07 11:25:41,147] [requestId=NA] org.apache.catalina.core.AprLifecycleListener: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/vsokolovskyi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
-INFO  [2018-11-07 11:25:41,311] [requestId=NA] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-INFO  [2018-11-07 11:25:41,311] [requestId=NA] org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1559 ms
-INFO  [2018-11-07 11:25:41,630] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'characterEncodingFilter' to: [/*]
-INFO  [2018-11-07 11:25:41,631] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'requestContextFilter' to: [/*]
-INFO  [2018-11-07 11:25:41,631] [requestId=NA] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet onseo.jerseytest.config.ResourceConfig mapped to [/*]
-INFO  [2018-11-07 11:25:42,373] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 50296 (http) with context path ''
-INFO  [2018-11-07 11:25:42,378] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: Started SampleMediumTest in 3.414 seconds (JVM running for 5.967)
-INFO  [2018-11-07 11:25:48,665] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.ToDoEntity
-INFO  [2018-11-07 11:25:48,855] [requestId=NA] org.eclipse.jetty.server.handler.ContextHandler.ROOT: RequestHandlerClass from context returned com.github.tomakehurst.wiremock.http.StubRequestHandler. Normalized mapped under returned 'null'
-ERROR [2018-11-07 11:25:48,901] [requestId=NA] WireMock: 
-                                               Request was not matched
-                                               =======================
-
------------------------------------------------------------------------------------------------------------------------
-| Closest stub                                             | Request                                                  |
------------------------------------------------------------------------------------------------------------------------
-                                                           |
-GET                                                        | GET
-/users/10                                                  | /todos/10                                           <<<<< URL does not match
-                                                           |
-                                                           |
------------------------------------------------------------------------------------------------------------------------
-
-INFO  [2018-11-07 11:25:48,935] [requestId=NA] org.eclipse.jetty.server.handler.ContextHandler.__admin: RequestHandlerClass from context returned com.github.tomakehurst.wiremock.http.AdminRequestHandler. Normalized mapped under returned 'null'
-INFO  [2018-11-07 11:25:48,958] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Response from JSON_Placeholder handled successfully
-INFO  [2018-11-07 11:25:49,083] [requestId=NA] org.eclipse.jetty.server.AbstractConnector: Stopped NetworkTrafficServerConnector@6ff37443{HTTP/1.1,[http/1.1]}{0.0.0.0:0}
-INFO  [2018-11-07 11:25:49,085] [requestId=NA] org.eclipse.jetty.server.handler.ContextHandler: Stopped o.e.j.s.ServletContextHandler@7e8a46b7{/,null,UNAVAILABLE}
-INFO  [2018-11-07 11:25:49,086] [requestId=NA] org.eclipse.jetty.server.handler.ContextHandler: Stopped o.e.j.s.ServletContextHandler@52a36910{/__admin,null,UNAVAILABLE}
-INFO  [2018-11-07 11:25:49,088] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@38a1a26: startup date [Wed Nov 07 13:25:39 EET 2018]; root of context hierarchy
-INFO  [2018-11-07 11:26:38,078] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: Starting SampleMediumTest on gs20013-macpro.on.seo with PID 1011 (started by vsokolovskyi in /Users/vsokolovskyi/git_repos/onseo.test.cache/onseo.test)
-INFO  [2018-11-07 11:26:38,079] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: The following profiles are active: mediumtest
-INFO  [2018-11-07 11:26:38,380] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2dfe5525: startup date [Wed Nov 07 13:26:38 EET 2018]; root of context hierarchy
-INFO  [2018-11-07 11:26:39,264] [requestId=NA] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-INFO  [2018-11-07 11:26:39,717] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 0 (http)
-INFO  [2018-11-07 11:26:39,753] [requestId=NA] org.apache.catalina.core.StandardService: Starting service [Tomcat]
-INFO  [2018-11-07 11:26:39,753] [requestId=NA] org.apache.catalina.core.StandardEngine: Starting Servlet Engine: Apache Tomcat/8.5.34
-INFO  [2018-11-07 11:26:39,766] [requestId=NA] org.apache.catalina.core.AprLifecycleListener: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/vsokolovskyi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
-INFO  [2018-11-07 11:26:39,934] [requestId=NA] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-INFO  [2018-11-07 11:26:39,935] [requestId=NA] org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1555 ms
-INFO  [2018-11-07 11:26:40,260] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'characterEncodingFilter' to: [/*]
-INFO  [2018-11-07 11:26:40,261] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'requestContextFilter' to: [/*]
-INFO  [2018-11-07 11:26:40,261] [requestId=NA] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet onseo.jerseytest.config.ResourceConfig mapped to [/*]
-INFO  [2018-11-07 11:26:41,034] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 50306 (http) with context path ''
-INFO  [2018-11-07 11:26:41,039] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: Started SampleMediumTest in 3.466 seconds (JVM running for 6.083)
-INFO  [2018-11-07 11:26:43,334] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.ToDoEntity
-INFO  [2018-11-07 11:26:43,527] [requestId=NA] org.eclipse.jetty.server.handler.ContextHandler.ROOT: RequestHandlerClass from context returned com.github.tomakehurst.wiremock.http.StubRequestHandler. Normalized mapped under returned 'null'
-INFO  [2018-11-07 11:26:43,828] [requestId=NA] org.eclipse.jetty.server.AbstractConnector: Stopped NetworkTrafficServerConnector@7f1972a6{HTTP/1.1,[http/1.1]}{0.0.0.0:0}
-INFO  [2018-11-07 11:26:43,830] [requestId=NA] org.eclipse.jetty.server.handler.ContextHandler: Stopped o.e.j.s.ServletContextHandler@22fba58c{/,null,UNAVAILABLE}
-INFO  [2018-11-07 11:26:43,831] [requestId=NA] org.eclipse.jetty.server.handler.ContextHandler: Stopped o.e.j.s.ServletContextHandler@5d58c727{/__admin,null,UNAVAILABLE}
-INFO  [2018-11-07 11:26:43,833] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2dfe5525: startup date [Wed Nov 07 13:26:38 EET 2018]; root of context hierarchy
-INFO  [2018-11-07 11:27:03,470] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: Starting SampleMediumTest on gs20013-macpro.on.seo with PID 1014 (started by vsokolovskyi in /Users/vsokolovskyi/git_repos/onseo.test.cache/onseo.test)
-INFO  [2018-11-07 11:27:03,471] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: The following profiles are active: mediumtest
-INFO  [2018-11-07 11:27:03,770] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7173ae5b: startup date [Wed Nov 07 13:27:03 EET 2018]; root of context hierarchy
-INFO  [2018-11-07 11:27:04,693] [requestId=NA] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-INFO  [2018-11-07 11:27:05,259] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 0 (http)
-INFO  [2018-11-07 11:27:05,298] [requestId=NA] org.apache.catalina.core.StandardService: Starting service [Tomcat]
-INFO  [2018-11-07 11:27:05,299] [requestId=NA] org.apache.catalina.core.StandardEngine: Starting Servlet Engine: Apache Tomcat/8.5.34
-INFO  [2018-11-07 11:27:05,312] [requestId=NA] org.apache.catalina.core.AprLifecycleListener: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/vsokolovskyi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
-INFO  [2018-11-07 11:27:05,488] [requestId=NA] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-INFO  [2018-11-07 11:27:05,488] [requestId=NA] org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1718 ms
-INFO  [2018-11-07 11:27:05,835] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'characterEncodingFilter' to: [/*]
-INFO  [2018-11-07 11:27:05,835] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'requestContextFilter' to: [/*]
-INFO  [2018-11-07 11:27:05,836] [requestId=NA] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet onseo.jerseytest.config.ResourceConfig mapped to [/*]
-INFO  [2018-11-07 11:27:06,547] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 50315 (http) with context path ''
-INFO  [2018-11-07 11:27:06,552] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: Started SampleMediumTest in 3.578 seconds (JVM running for 6.096)
-INFO  [2018-11-07 11:27:08,747] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.ToDoEntity
-INFO  [2018-11-07 11:27:08,942] [requestId=NA] org.eclipse.jetty.server.handler.ContextHandler.ROOT: RequestHandlerClass from context returned com.github.tomakehurst.wiremock.http.StubRequestHandler. Normalized mapped under returned 'null'
-INFO  [2018-11-07 11:28:44,389] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7173ae5b: startup date [Wed Nov 07 13:27:03 EET 2018]; root of context hierarchy
-INFO  [2018-11-07 11:29:15,129] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: Starting SampleMediumTest on gs20013-macpro.on.seo with PID 1020 (started by vsokolovskyi in /Users/vsokolovskyi/git_repos/onseo.test.cache/onseo.test)
-INFO  [2018-11-07 11:29:15,129] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: The following profiles are active: mediumtest
-INFO  [2018-11-07 11:29:15,417] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5fb65013: startup date [Wed Nov 07 13:29:15 EET 2018]; root of context hierarchy
-INFO  [2018-11-07 11:29:16,340] [requestId=NA] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-INFO  [2018-11-07 11:29:16,804] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 0 (http)
-INFO  [2018-11-07 11:29:16,840] [requestId=NA] org.apache.catalina.core.StandardService: Starting service [Tomcat]
-INFO  [2018-11-07 11:29:16,841] [requestId=NA] org.apache.catalina.core.StandardEngine: Starting Servlet Engine: Apache Tomcat/8.5.34
-INFO  [2018-11-07 11:29:16,854] [requestId=NA] org.apache.catalina.core.AprLifecycleListener: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/vsokolovskyi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
-INFO  [2018-11-07 11:29:17,023] [requestId=NA] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-INFO  [2018-11-07 11:29:17,023] [requestId=NA] org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1606 ms
-INFO  [2018-11-07 11:29:17,363] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'characterEncodingFilter' to: [/*]
-INFO  [2018-11-07 11:29:17,363] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'requestContextFilter' to: [/*]
-INFO  [2018-11-07 11:29:17,364] [requestId=NA] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet onseo.jerseytest.config.ResourceConfig mapped to [/*]
-INFO  [2018-11-07 11:29:18,101] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 50333 (http) with context path ''
-INFO  [2018-11-07 11:29:18,107] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: Started SampleMediumTest in 3.432 seconds (JVM running for 5.869)
-INFO  [2018-11-07 11:29:20,335] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.ToDoEntity
-INFO  [2018-11-07 11:29:20,530] [requestId=NA] org.eclipse.jetty.server.handler.ContextHandler.ROOT: RequestHandlerClass from context returned com.github.tomakehurst.wiremock.http.StubRequestHandler. Normalized mapped under returned 'null'
-ERROR [2018-11-07 11:29:32,616] [requestId=NA] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[onseo.jerseytest.config.ResourceConfig]: Servlet.service() for servlet [onseo.jerseytest.config.ResourceConfig] in context with path [] threw exception [java.lang.IllegalStateException: Entity input stream has already been closed.] with root cause
-java.lang.IllegalStateException: Entity input stream has already been closed.
-	at org.glassfish.jersey.message.internal.EntityInputStream.ensureNotClosed(EntityInputStream.java:229)
-	at org.glassfish.jersey.message.internal.InboundMessageContext.readEntity(InboundMessageContext.java:854)
-	at org.glassfish.jersey.message.internal.InboundMessageContext.readEntity(InboundMessageContext.java:808)
-	at org.glassfish.jersey.client.ClientResponse.readEntity(ClientResponse.java:321)
-	at org.glassfish.jersey.client.InboundJaxrsResponse$1.call(InboundJaxrsResponse.java:115)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:316)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:298)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:229)
-	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:389)
-	at org.glassfish.jersey.client.InboundJaxrsResponse.runInScopeIfPossible(InboundJaxrsResponse.java:264)
-	at org.glassfish.jersey.client.InboundJaxrsResponse.readEntity(InboundJaxrsResponse.java:112)
-	at onseo.jerseytest.infrastructure.dao.PlaceholderClient.handleResponse(PlaceholderClient.java:41)
-	at onseo.jerseytest.infrastructure.dao.PlaceholderClient.getEntity(PlaceholderClient.java:32)
-	at onseo.jerseytest.services.SummaryService.getToDo(SummaryService.java:19)
-	at onseo.jerseytest.SampleEndpoint.sampleToDo(SampleEndpoint.java:35)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory.lambda$static$0(ResourceMethodInvocationHandlerFactory.java:76)
-	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:148)
-	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:191)
-	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$TypeOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:243)
-	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:103)
-	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:493)
-	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:415)
-	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:104)
-	at org.glassfish.jersey.server.ServerRuntime$1.run(ServerRuntime.java:277)
-	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:272)
-	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:268)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:316)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:298)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:268)
-	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:289)
-	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:256)
-	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:703)
-	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:416)
-	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:370)
-	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:389)
-	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:342)
-	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:229)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-INFO  [2018-11-07 11:29:32,749] [requestId=NA] org.eclipse.jetty.server.AbstractConnector: Stopped NetworkTrafficServerConnector@40ab8a8{HTTP/1.1,[http/1.1]}{0.0.0.0:0}
-INFO  [2018-11-07 11:29:32,751] [requestId=NA] org.eclipse.jetty.server.handler.ContextHandler: Stopped o.e.j.s.ServletContextHandler@22fba58c{/,null,UNAVAILABLE}
-INFO  [2018-11-07 11:29:32,752] [requestId=NA] org.eclipse.jetty.server.handler.ContextHandler: Stopped o.e.j.s.ServletContextHandler@5d58c727{/__admin,null,UNAVAILABLE}
-WARN  [2018-11-07 11:29:32,754] [requestId=NA] org.eclipse.jetty.util.thread.QueuedThreadPool: QueuedThreadPool[qtp238467882]@e36bb2a{STOPPING,8<=8<=10,i=0,q=4}[org.eclipse.jetty.util.thread.TryExecutor$$Lambda$47/121466124@362cf66] Couldn't stop Thread[qtp238467882-14,5,]
-WARN  [2018-11-07 11:29:32,754] [requestId=NA] org.eclipse.jetty.util.thread.QueuedThreadPool: QueuedThreadPool[qtp238467882]@e36bb2a{STOPPING,8<=8<=10,i=0,q=4}[org.eclipse.jetty.util.thread.TryExecutor$$Lambda$47/121466124@362cf66] Couldn't stop Thread[qtp238467882-13,5,]
-INFO  [2018-11-07 11:29:32,755] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5fb65013: startup date [Wed Nov 07 13:29:15 EET 2018]; root of context hierarchy
-INFO  [2018-11-07 11:29:48,502] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: Starting SampleMediumTest on gs20013-macpro.on.seo with PID 1025 (started by vsokolovskyi in /Users/vsokolovskyi/git_repos/onseo.test.cache/onseo.test)
-INFO  [2018-11-07 11:29:48,503] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: The following profiles are active: mediumtest
-INFO  [2018-11-07 11:29:48,805] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@bfc14b9: startup date [Wed Nov 07 13:29:48 EET 2018]; root of context hierarchy
-INFO  [2018-11-07 11:29:49,685] [requestId=NA] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-INFO  [2018-11-07 11:29:50,132] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 0 (http)
-INFO  [2018-11-07 11:29:50,167] [requestId=NA] org.apache.catalina.core.StandardService: Starting service [Tomcat]
-INFO  [2018-11-07 11:29:50,168] [requestId=NA] org.apache.catalina.core.StandardEngine: Starting Servlet Engine: Apache Tomcat/8.5.34
-INFO  [2018-11-07 11:29:50,180] [requestId=NA] org.apache.catalina.core.AprLifecycleListener: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/vsokolovskyi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
-INFO  [2018-11-07 11:29:50,349] [requestId=NA] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-INFO  [2018-11-07 11:29:50,350] [requestId=NA] org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1544 ms
-INFO  [2018-11-07 11:29:50,692] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'characterEncodingFilter' to: [/*]
-INFO  [2018-11-07 11:29:50,692] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'requestContextFilter' to: [/*]
-INFO  [2018-11-07 11:29:50,693] [requestId=NA] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet onseo.jerseytest.config.ResourceConfig mapped to [/*]
-INFO  [2018-11-07 11:29:51,469] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 50344 (http) with context path ''
-INFO  [2018-11-07 11:29:51,475] [requestId=NA] onseo.jerseytest.functional.SampleMediumTest: Started SampleMediumTest in 3.465 seconds (JVM running for 6.028)
-INFO  [2018-11-07 11:29:53,715] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.ToDoEntity
-INFO  [2018-11-07 11:29:53,897] [requestId=NA] org.eclipse.jetty.server.handler.ContextHandler.ROOT: RequestHandlerClass from context returned com.github.tomakehurst.wiremock.http.StubRequestHandler. Normalized mapped under returned 'null'
-INFO  [2018-11-07 11:29:54,097] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Response from JSON_Placeholder handled successfully
-INFO  [2018-11-07 11:29:54,228] [requestId=NA] org.eclipse.jetty.server.AbstractConnector: Stopped NetworkTrafficServerConnector@6ff37443{HTTP/1.1,[http/1.1]}{0.0.0.0:0}
-INFO  [2018-11-07 11:29:54,230] [requestId=NA] org.eclipse.jetty.server.handler.ContextHandler: Stopped o.e.j.s.ServletContextHandler@7e8a46b7{/,null,UNAVAILABLE}
-INFO  [2018-11-07 11:29:54,231] [requestId=NA] org.eclipse.jetty.server.handler.ContextHandler: Stopped o.e.j.s.ServletContextHandler@52a36910{/__admin,null,UNAVAILABLE}
-INFO  [2018-11-07 11:29:54,233] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@bfc14b9: startup date [Wed Nov 07 13:29:48 EET 2018]; root of context hierarchy
+INFO  [2018-11-08 08:29:29,335] [requestId=NA] onseo.jerseytest.App: Starting App on gs20013-macpro.on.seo with PID 653 (/Users/vsokolovskyi/git_repos/onseo.test.cache/onseo.test/target/classes started by vsokolovskyi in /Users/vsokolovskyi/git_repos/onseo.test.cache/onseo.test)
+INFO  [2018-11-08 08:29:29,342] [requestId=NA] onseo.jerseytest.App: No active profile set, falling back to default profiles: default
+INFO  [2018-11-08 08:29:29,399] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1e178745: startup date [Thu Nov 08 10:29:29 EET 2018]; root of context hierarchy
+INFO  [2018-11-08 08:29:30,075] [requestId=NA] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+INFO  [2018-11-08 08:29:30,458] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 9009 (http)
+INFO  [2018-11-08 08:29:30,483] [requestId=NA] org.apache.catalina.core.StandardService: Starting service [Tomcat]
+INFO  [2018-11-08 08:29:30,483] [requestId=NA] org.apache.catalina.core.StandardEngine: Starting Servlet Engine: Apache Tomcat/8.5.34
+INFO  [2018-11-08 08:29:30,487] [requestId=NA] org.apache.catalina.core.AprLifecycleListener: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/vsokolovskyi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+INFO  [2018-11-08 08:29:30,595] [requestId=NA] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+INFO  [2018-11-08 08:29:30,595] [requestId=NA] org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1196 ms
+INFO  [2018-11-08 08:29:30,863] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'characterEncodingFilter' to: [/*]
+INFO  [2018-11-08 08:29:30,863] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'requestContextFilter' to: [/*]
+INFO  [2018-11-08 08:29:30,863] [requestId=NA] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet onseo.jerseytest.config.ResourceConfig mapped to [/*]
+INFO  [2018-11-08 08:29:31,068] [requestId=NA] org.springframework.jmx.export.annotation.AnnotationMBeanExporter: Registering beans for JMX exposure on startup
+INFO  [2018-11-08 08:29:31,124] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 9009 (http) with context path ''
+INFO  [2018-11-08 08:29:31,129] [requestId=NA] onseo.jerseytest.App: Started App in 2.324 seconds (JVM running for 3.799)
+INFO  [2018-11-08 08:30:07,441] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.ToDoEntity
+INFO  [2018-11-08 08:30:07,931] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Response from JSON_Placeholder handled successfully
+INFO  [2018-11-08 08:30:07,931] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.CommentEntity
+INFO  [2018-11-08 08:30:08,294] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Response from JSON_Placeholder handled successfully
+INFO  [2018-11-08 08:30:08,295] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.UserEntity
+INFO  [2018-11-08 08:30:08,361] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Response from JSON_Placeholder handled successfully
+INFO  [2018-11-08 08:30:41,010] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1e178745: startup date [Thu Nov 08 10:29:29 EET 2018]; root of context hierarchy
+INFO  [2018-11-08 08:30:41,013] [requestId=NA] org.springframework.jmx.export.annotation.AnnotationMBeanExporter: Unregistering JMX-exposed beans on shutdown
+INFO  [2018-11-08 09:31:21,620] [requestId=NA] onseo.jerseytest.App: Starting App on gs20013-macpro.on.seo with PID 764 (/Users/vsokolovskyi/git_repos/onseo.test.cache/onseo.test/target/classes started by vsokolovskyi in /Users/vsokolovskyi/git_repos/onseo.test.cache/onseo.test)
+INFO  [2018-11-08 09:31:21,624] [requestId=NA] onseo.jerseytest.App: No active profile set, falling back to default profiles: default
+INFO  [2018-11-08 09:31:21,663] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1f59a598: startup date [Thu Nov 08 11:31:21 EET 2018]; root of context hierarchy
+INFO  [2018-11-08 09:31:22,316] [requestId=NA] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+INFO  [2018-11-08 09:31:22,632] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 9009 (http)
+INFO  [2018-11-08 09:31:22,652] [requestId=NA] org.apache.catalina.core.StandardService: Starting service [Tomcat]
+INFO  [2018-11-08 09:31:22,652] [requestId=NA] org.apache.catalina.core.StandardEngine: Starting Servlet Engine: Apache Tomcat/8.5.34
+INFO  [2018-11-08 09:31:22,656] [requestId=NA] org.apache.catalina.core.AprLifecycleListener: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/vsokolovskyi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+INFO  [2018-11-08 09:31:22,749] [requestId=NA] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+INFO  [2018-11-08 09:31:22,750] [requestId=NA] org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1087 ms
+INFO  [2018-11-08 09:31:23,006] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'characterEncodingFilter' to: [/*]
+INFO  [2018-11-08 09:31:23,006] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'requestContextFilter' to: [/*]
+INFO  [2018-11-08 09:31:23,007] [requestId=NA] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet onseo.jerseytest.config.ResourceConfig mapped to [/*]
+INFO  [2018-11-08 09:31:23,194] [requestId=NA] org.springframework.jmx.export.annotation.AnnotationMBeanExporter: Registering beans for JMX exposure on startup
+INFO  [2018-11-08 09:31:23,243] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 9009 (http) with context path ''
+INFO  [2018-11-08 09:31:23,248] [requestId=NA] onseo.jerseytest.App: Started App in 2.103 seconds (JVM running for 3.002)
+INFO  [2018-11-08 09:31:53,984] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.ToDoEntity
+INFO  [2018-11-08 09:31:54,217] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Response from JSON_Placeholder handled successfully
+INFO  [2018-11-08 09:31:54,217] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.CommentEntity
+INFO  [2018-11-08 09:31:54,283] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Response from JSON_Placeholder handled successfully
+INFO  [2018-11-08 09:31:54,284] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.UserEntity
+INFO  [2018-11-08 09:31:54,346] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Response from JSON_Placeholder handled successfully
+INFO  [2018-11-08 09:32:04,587] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.ToDoEntity
+INFO  [2018-11-08 09:32:04,653] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Response from JSON_Placeholder handled successfully
+INFO  [2018-11-08 09:32:04,654] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.CommentEntity
+INFO  [2018-11-08 09:32:04,688] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Response from JSON_Placeholder handled successfully
+INFO  [2018-11-08 09:32:04,688] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.UserEntity
+INFO  [2018-11-08 09:32:04,723] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Response from JSON_Placeholder handled successfully
+INFO  [2018-11-08 09:32:07,616] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.ToDoEntity
+INFO  [2018-11-08 09:32:07,649] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Response from JSON_Placeholder handled successfully
+INFO  [2018-11-08 09:32:07,649] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.CommentEntity
+INFO  [2018-11-08 09:32:07,682] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Response from JSON_Placeholder handled successfully
+INFO  [2018-11-08 09:32:07,682] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.UserEntity
+INFO  [2018-11-08 09:32:07,724] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Response from JSON_Placeholder handled successfully
+INFO  [2018-11-08 09:32:14,657] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.ToDoEntity
+INFO  [2018-11-08 09:32:14,724] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Response from JSON_Placeholder handled successfully
+INFO  [2018-11-08 09:32:14,724] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.CommentEntity
+INFO  [2018-11-08 09:32:14,758] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Response from JSON_Placeholder handled successfully
+INFO  [2018-11-08 09:32:14,758] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.UserEntity
+INFO  [2018-11-08 09:32:14,796] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Response from JSON_Placeholder handled successfully
+INFO  [2018-11-08 09:32:17,135] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1f59a598: startup date [Thu Nov 08 11:31:21 EET 2018]; root of context hierarchy
+INFO  [2018-11-08 09:32:17,138] [requestId=NA] org.springframework.jmx.export.annotation.AnnotationMBeanExporter: Unregistering JMX-exposed beans on shutdown
+INFO  [2018-11-08 09:41:06,175] [requestId=NA] onseo.jerseytest.App: Starting App on gs20013-macpro.on.seo with PID 774 (/Users/vsokolovskyi/git_repos/onseo.test.cache/onseo.test/target/classes started by vsokolovskyi in /Users/vsokolovskyi/git_repos/onseo.test.cache/onseo.test)
+INFO  [2018-11-08 09:41:06,178] [requestId=NA] onseo.jerseytest.App: No active profile set, falling back to default profiles: default
+INFO  [2018-11-08 09:41:06,215] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1f59a598: startup date [Thu Nov 08 11:41:06 EET 2018]; root of context hierarchy
+INFO  [2018-11-08 09:41:06,833] [requestId=NA] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+INFO  [2018-11-08 09:41:07,137] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 9009 (http)
+INFO  [2018-11-08 09:41:07,157] [requestId=NA] org.apache.catalina.core.StandardService: Starting service [Tomcat]
+INFO  [2018-11-08 09:41:07,157] [requestId=NA] org.apache.catalina.core.StandardEngine: Starting Servlet Engine: Apache Tomcat/8.5.34
+INFO  [2018-11-08 09:41:07,161] [requestId=NA] org.apache.catalina.core.AprLifecycleListener: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/vsokolovskyi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+INFO  [2018-11-08 09:41:07,253] [requestId=NA] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+INFO  [2018-11-08 09:41:07,253] [requestId=NA] org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1038 ms
+INFO  [2018-11-08 09:41:07,509] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'characterEncodingFilter' to: [/*]
+INFO  [2018-11-08 09:41:07,510] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'requestContextFilter' to: [/*]
+INFO  [2018-11-08 09:41:07,510] [requestId=NA] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet onseo.jerseytest.config.ResourceConfig mapped to [/*]
+INFO  [2018-11-08 09:41:07,690] [requestId=NA] org.springframework.jmx.export.annotation.AnnotationMBeanExporter: Registering beans for JMX exposure on startup
+INFO  [2018-11-08 09:41:07,740] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 9009 (http) with context path ''
+INFO  [2018-11-08 09:41:07,744] [requestId=NA] onseo.jerseytest.App: Started App in 2.001 seconds (JVM running for 2.742)
+INFO  [2018-11-08 09:41:12,657] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.ToDoEntity
+INFO  [2018-11-08 09:41:12,657] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.CommentEntity
+INFO  [2018-11-08 09:41:12,658] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.UserEntity
+INFO  [2018-11-08 09:41:13,151] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Response from JSON_Placeholder handled successfully
+INFO  [2018-11-08 09:41:13,212] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Response from JSON_Placeholder handled successfully
+INFO  [2018-11-08 09:41:13,212] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Response from JSON_Placeholder handled successfully
+INFO  [2018-11-08 09:41:13,212] [requestId=NA] onseo.jerseytest.services.SummaryService: Async callback starts processing request from ToDo client...
+INFO  [2018-11-08 09:41:13,212] [requestId=NA] onseo.jerseytest.services.SummaryService: Async callback starts processing request from Comment client...
+INFO  [2018-11-08 09:41:13,212] [requestId=NA] onseo.jerseytest.services.SummaryService: Async callback starts processing request from User client...
+INFO  [2018-11-08 09:41:31,008] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1f59a598: startup date [Thu Nov 08 11:41:06 EET 2018]; root of context hierarchy
+INFO  [2018-11-08 09:41:31,011] [requestId=NA] org.springframework.jmx.export.annotation.AnnotationMBeanExporter: Unregistering JMX-exposed beans on shutdown
+INFO  [2018-11-08 09:41:46,783] [requestId=NA] onseo.jerseytest.App: Starting App on gs20013-macpro.on.seo with PID 779 (/Users/vsokolovskyi/git_repos/onseo.test.cache/onseo.test/target/classes started by vsokolovskyi in /Users/vsokolovskyi/git_repos/onseo.test.cache/onseo.test)
+INFO  [2018-11-08 09:41:46,787] [requestId=NA] onseo.jerseytest.App: No active profile set, falling back to default profiles: default
+INFO  [2018-11-08 09:41:46,830] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1f59a598: startup date [Thu Nov 08 11:41:46 EET 2018]; root of context hierarchy
+INFO  [2018-11-08 09:41:47,583] [requestId=NA] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+INFO  [2018-11-08 09:41:47,915] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 9009 (http)
+INFO  [2018-11-08 09:41:47,937] [requestId=NA] org.apache.catalina.core.StandardService: Starting service [Tomcat]
+INFO  [2018-11-08 09:41:47,938] [requestId=NA] org.apache.catalina.core.StandardEngine: Starting Servlet Engine: Apache Tomcat/8.5.34
+INFO  [2018-11-08 09:41:47,943] [requestId=NA] org.apache.catalina.core.AprLifecycleListener: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/vsokolovskyi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+INFO  [2018-11-08 09:41:48,047] [requestId=NA] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+INFO  [2018-11-08 09:41:48,047] [requestId=NA] org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1217 ms
+INFO  [2018-11-08 09:41:48,327] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'characterEncodingFilter' to: [/*]
+INFO  [2018-11-08 09:41:48,328] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'requestContextFilter' to: [/*]
+INFO  [2018-11-08 09:41:48,328] [requestId=NA] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet onseo.jerseytest.config.ResourceConfig mapped to [/*]
+INFO  [2018-11-08 09:41:48,511] [requestId=NA] org.springframework.jmx.export.annotation.AnnotationMBeanExporter: Registering beans for JMX exposure on startup
+INFO  [2018-11-08 09:41:48,566] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 9009 (http) with context path ''
+INFO  [2018-11-08 09:41:48,573] [requestId=NA] onseo.jerseytest.App: Started App in 2.23 seconds (JVM running for 2.982)
+INFO  [2018-11-08 09:41:52,619] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.ToDoEntity
+INFO  [2018-11-08 09:41:52,619] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.CommentEntity
+INFO  [2018-11-08 09:41:52,619] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.UserEntity
+INFO  [2018-11-08 09:41:52,833] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Response from JSON_Placeholder handled successfully
+INFO  [2018-11-08 09:41:52,833] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Response from JSON_Placeholder handled successfully
+INFO  [2018-11-08 09:41:52,833] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Response from JSON_Placeholder handled successfully
+INFO  [2018-11-08 09:41:52,834] [requestId=NA] onseo.jerseytest.services.SummaryService: Async callback starts processing request from ToDo client...
+INFO  [2018-11-08 09:41:52,834] [requestId=NA] onseo.jerseytest.services.SummaryService: Async callback starts processing request from Comment client...
+INFO  [2018-11-08 09:41:52,834] [requestId=NA] onseo.jerseytest.services.SummaryService: Async callback starts processing request from User client...
+INFO  [2018-11-08 10:09:46,542] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1f59a598: startup date [Thu Nov 08 11:41:46 EET 2018]; root of context hierarchy
+INFO  [2018-11-08 10:09:46,545] [requestId=NA] org.springframework.jmx.export.annotation.AnnotationMBeanExporter: Unregistering JMX-exposed beans on shutdown
+INFO  [2018-11-08 10:09:49,949] [requestId=NA] onseo.jerseytest.App: Starting App on gs20013-macpro.on.seo with PID 791 (/Users/vsokolovskyi/git_repos/onseo.test.cache/onseo.test/target/classes started by vsokolovskyi in /Users/vsokolovskyi/git_repos/onseo.test.cache/onseo.test)
+INFO  [2018-11-08 10:09:49,952] [requestId=NA] onseo.jerseytest.App: No active profile set, falling back to default profiles: default
+INFO  [2018-11-08 10:09:49,990] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1f59a598: startup date [Thu Nov 08 12:09:49 EET 2018]; root of context hierarchy
+INFO  [2018-11-08 10:09:50,609] [requestId=NA] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+INFO  [2018-11-08 10:09:50,918] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 9009 (http)
+INFO  [2018-11-08 10:09:50,938] [requestId=NA] org.apache.catalina.core.StandardService: Starting service [Tomcat]
+INFO  [2018-11-08 10:09:50,939] [requestId=NA] org.apache.catalina.core.StandardEngine: Starting Servlet Engine: Apache Tomcat/8.5.34
+INFO  [2018-11-08 10:09:50,943] [requestId=NA] org.apache.catalina.core.AprLifecycleListener: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/vsokolovskyi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+INFO  [2018-11-08 10:09:51,034] [requestId=NA] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+INFO  [2018-11-08 10:09:51,035] [requestId=NA] org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1045 ms
+INFO  [2018-11-08 10:09:51,285] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'characterEncodingFilter' to: [/*]
+INFO  [2018-11-08 10:09:51,285] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'requestContextFilter' to: [/*]
+INFO  [2018-11-08 10:09:51,285] [requestId=NA] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet onseo.jerseytest.config.ResourceConfig mapped to [/*]
+INFO  [2018-11-08 10:09:51,465] [requestId=NA] org.springframework.jmx.export.annotation.AnnotationMBeanExporter: Registering beans for JMX exposure on startup
+INFO  [2018-11-08 10:09:51,514] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 9009 (http) with context path ''
+INFO  [2018-11-08 10:09:51,519] [requestId=NA] onseo.jerseytest.App: Started App in 1.997 seconds (JVM running for 2.733)
+INFO  [2018-11-08 10:09:56,757] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.ToDoEntity
+INFO  [2018-11-08 10:09:57,022] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Response from JSON_Placeholder handled successfully
+INFO  [2018-11-08 10:09:57,023] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.CommentEntity
+INFO  [2018-11-08 10:09:57,023] [requestId=NA] onseo.jerseytest.services.SummaryService: Async callback starts processing request from ToDo client...
+INFO  [2018-11-08 10:09:57,023] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.UserEntity
+INFO  [2018-11-08 10:09:57,095] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Response from JSON_Placeholder handled successfully
+INFO  [2018-11-08 10:09:57,096] [requestId=NA] onseo.jerseytest.services.SummaryService: Async callback starts processing request from Comment client...
+INFO  [2018-11-08 10:09:57,155] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Response from JSON_Placeholder handled successfully
+INFO  [2018-11-08 10:09:57,155] [requestId=NA] onseo.jerseytest.services.SummaryService: Async callback starts processing request from User client...
+INFO  [2018-11-08 10:10:04,153] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.ToDoEntity
+INFO  [2018-11-08 10:10:04,475] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Response from JSON_Placeholder handled successfully
+INFO  [2018-11-08 10:10:04,475] [requestId=NA] onseo.jerseytest.services.SummaryService: Async callback starts processing request from ToDo client...
+INFO  [2018-11-08 10:10:04,475] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.UserEntity
+INFO  [2018-11-08 10:10:04,475] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.CommentEntity
+INFO  [2018-11-08 10:10:04,509] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Response from JSON_Placeholder handled successfully
+INFO  [2018-11-08 10:10:04,789] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Response from JSON_Placeholder handled successfully
+INFO  [2018-11-08 10:10:04,789] [requestId=NA] onseo.jerseytest.services.SummaryService: Async callback starts processing request from Comment client...
+INFO  [2018-11-08 10:10:04,789] [requestId=NA] onseo.jerseytest.services.SummaryService: Async callback starts processing request from User client...
+INFO  [2018-11-08 10:10:21,692] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1f59a598: startup date [Thu Nov 08 12:09:49 EET 2018]; root of context hierarchy
+INFO  [2018-11-08 10:10:21,694] [requestId=NA] org.springframework.jmx.export.annotation.AnnotationMBeanExporter: Unregistering JMX-exposed beans on shutdown
+INFO  [2018-11-08 12:14:40,300] [requestId=NA] onseo.jerseytest.App: Starting App on gs20013-macpro.on.seo with PID 880 (/Users/vsokolovskyi/git_repos/onseo.test.cache/onseo.test/target/classes started by vsokolovskyi in /Users/vsokolovskyi/git_repos/onseo.test.cache/onseo.test)
+INFO  [2018-11-08 12:14:40,304] [requestId=NA] onseo.jerseytest.App: No active profile set, falling back to default profiles: default
+INFO  [2018-11-08 12:14:40,346] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1f59a598: startup date [Thu Nov 08 14:14:40 EET 2018]; root of context hierarchy
+INFO  [2018-11-08 12:14:41,037] [requestId=NA] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+INFO  [2018-11-08 12:14:41,377] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 9009 (http)
+INFO  [2018-11-08 12:14:41,399] [requestId=NA] org.apache.catalina.core.StandardService: Starting service [Tomcat]
+INFO  [2018-11-08 12:14:41,400] [requestId=NA] org.apache.catalina.core.StandardEngine: Starting Servlet Engine: Apache Tomcat/8.5.34
+INFO  [2018-11-08 12:14:41,404] [requestId=NA] org.apache.catalina.core.AprLifecycleListener: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/vsokolovskyi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+INFO  [2018-11-08 12:14:41,504] [requestId=NA] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+INFO  [2018-11-08 12:14:41,504] [requestId=NA] org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1158 ms
+INFO  [2018-11-08 12:14:41,774] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'characterEncodingFilter' to: [/*]
+INFO  [2018-11-08 12:14:41,774] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'requestContextFilter' to: [/*]
+INFO  [2018-11-08 12:14:41,774] [requestId=NA] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet onseo.jerseytest.config.ResourceConfig mapped to [/*]
+INFO  [2018-11-08 12:14:41,955] [requestId=NA] org.springframework.jmx.export.annotation.AnnotationMBeanExporter: Registering beans for JMX exposure on startup
+INFO  [2018-11-08 12:14:42,005] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 9009 (http) with context path ''
+INFO  [2018-11-08 12:14:42,010] [requestId=NA] onseo.jerseytest.App: Started App in 2.152 seconds (JVM running for 2.92)
+INFO  [2018-11-08 12:15:05,732] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.CommentEntity
+INFO  [2018-11-08 12:15:05,732] [requestId=NA] onseo.jerseytest.services.SummaryService: Async callback starts processing request from onseo.jerseytest.infrastructure.dao.models.CommentEntity client...
+ERROR [2018-11-08 12:15:05,941] [requestId=NA] onseo.jerseytest.services.SummaryService: javax.ws.rs.ProcessingException: Error reading entity from input stream.
+INFO  [2018-11-08 12:15:48,024] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.CommentEntity
+INFO  [2018-11-08 12:15:48,024] [requestId=NA] onseo.jerseytest.services.SummaryService: Async callback starts processing request from onseo.jerseytest.infrastructure.dao.models.CommentEntity client...
+ERROR [2018-11-08 12:15:48,093] [requestId=NA] onseo.jerseytest.services.SummaryService: javax.ws.rs.ProcessingException: Error reading entity from input stream.
+INFO  [2018-11-08 12:16:04,810] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.ToDoEntity
+INFO  [2018-11-08 12:16:04,810] [requestId=NA] onseo.jerseytest.services.SummaryService: Async callback starts processing request from onseo.jerseytest.infrastructure.dao.models.ToDoEntity client...
+ERROR [2018-11-08 12:16:04,930] [requestId=NA] onseo.jerseytest.services.SummaryService: javax.ws.rs.ProcessingException: Error reading entity from input stream.
+INFO  [2018-11-08 12:16:04,930] [requestId=NA] onseo.jerseytest.services.SummaryService: Async callback starts processing request from onseo.jerseytest.infrastructure.dao.models.CommentEntity client...
+INFO  [2018-11-08 12:16:04,930] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.CommentEntity
+ERROR [2018-11-08 12:16:04,964] [requestId=NA] onseo.jerseytest.services.SummaryService: javax.ws.rs.ProcessingException: Error reading entity from input stream.
+INFO  [2018-11-08 12:16:04,964] [requestId=NA] onseo.jerseytest.services.SummaryService: Async callback starts processing request from onseo.jerseytest.infrastructure.dao.models.UserEntity client...
+INFO  [2018-11-08 12:16:04,964] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Client class has been called for entity onseo.jerseytest.infrastructure.dao.models.UserEntity
+INFO  [2018-11-08 12:16:05,026] [requestId=NA] onseo.jerseytest.infrastructure.dao.PlaceholderClient: Response from JSON_Placeholder handled successfully
+INFO  [2018-11-08 12:16:49,347] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1f59a598: startup date [Thu Nov 08 14:14:40 EET 2018]; root of context hierarchy
+INFO  [2018-11-08 12:16:49,349] [requestId=NA] org.springframework.jmx.export.annotation.AnnotationMBeanExporter: Unregistering JMX-exposed beans on shutdown
+INFO  [2018-11-08 12:28:52,891] [requestId=NA] onseo.jerseytest.App: Starting App on gs20013-macpro.on.seo with PID 1017 (/Users/vsokolovskyi/git_repos/onseo.test.cache/onseo.test/target/classes started by vsokolovskyi in /Users/vsokolovskyi/git_repos/onseo.test.cache/onseo.test)
+INFO  [2018-11-08 12:28:52,894] [requestId=NA] onseo.jerseytest.App: No active profile set, falling back to default profiles: default
+INFO  [2018-11-08 12:28:52,942] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1e178745: startup date [Thu Nov 08 14:28:52 EET 2018]; root of context hierarchy
+INFO  [2018-11-08 12:28:53,596] [requestId=NA] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+INFO  [2018-11-08 12:28:53,914] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 9009 (http)
+INFO  [2018-11-08 12:28:53,935] [requestId=NA] org.apache.catalina.core.StandardService: Starting service [Tomcat]
+INFO  [2018-11-08 12:28:53,935] [requestId=NA] org.apache.catalina.core.StandardEngine: Starting Servlet Engine: Apache Tomcat/8.5.34
+INFO  [2018-11-08 12:28:53,940] [requestId=NA] org.apache.catalina.core.AprLifecycleListener: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/vsokolovskyi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+INFO  [2018-11-08 12:28:54,035] [requestId=NA] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+INFO  [2018-11-08 12:28:54,035] [requestId=NA] org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1093 ms
+INFO  [2018-11-08 12:28:54,294] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'characterEncodingFilter' to: [/*]
+INFO  [2018-11-08 12:28:54,294] [requestId=NA] org.springframework.boot.web.servlet.FilterRegistrationBean: Mapping filter: 'requestContextFilter' to: [/*]
+INFO  [2018-11-08 12:28:54,295] [requestId=NA] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet onseo.jerseytest.config.ResourceConfig mapped to [/*]
+INFO  [2018-11-08 12:28:54,474] [requestId=NA] org.springframework.jmx.export.annotation.AnnotationMBeanExporter: Registering beans for JMX exposure on startup
+INFO  [2018-11-08 12:28:54,527] [requestId=NA] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 9009 (http) with context path ''
+INFO  [2018-11-08 12:28:54,532] [requestId=NA] onseo.jerseytest.App: Started App in 2.088 seconds (JVM running for 3.06)
+INFO  [2018-11-08 12:28:57,518] [requestId=NA] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1e178745: startup date [Thu Nov 08 14:28:52 EET 2018]; root of context hierarchy
+INFO  [2018-11-08 12:28:57,521] [requestId=NA] org.springframework.jmx.export.annotation.AnnotationMBeanExporter: Unregistering JMX-exposed beans on shutdown

@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.CoreMatchers.notNullValue;
 
 public class SampleMediumTest extends AbstractMediumTest {
     private final static String REQUEST_URL_TEMPLATE = "?id=%s";
@@ -59,7 +60,8 @@ public class SampleMediumTest extends AbstractMediumTest {
                 .header("Content-Type", "application/json")
                 .when().get("/Sample/10").then()
                 .assertThat().statusCode(200)
-        .contentType(ContentType.JSON);
+                .assertThat().contentType(ContentType.JSON)
+                .assertThat().body(notNullValue());
     }
     private void registerStubs(int id)
     {
