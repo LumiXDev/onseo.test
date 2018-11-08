@@ -37,7 +37,7 @@ public class SummaryService {
         T result = null;
         PlaceholderClient<T> client = getAppropriateDaoClient(cls);
 
-        CompletableFuture<T> task = CompletableFuture.supplyAsync(() -> client.getEntity(id, "/users/", cls));
+        CompletableFuture<T> task = CompletableFuture.supplyAsync(() -> client.getEntity(id, endpointSuffix, cls));
         try {
             log.info("Async callback starts processing request from {} client...", cls.getName());
             result = task.get();
