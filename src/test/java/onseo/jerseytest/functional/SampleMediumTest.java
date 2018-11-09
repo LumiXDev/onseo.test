@@ -9,7 +9,6 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.notNullValue;
 
 public class SampleMediumTest extends AbstractMediumTest {
-    private final static String REQUEST_URL_TEMPLATE = "?id=%s";
 
     private static final String TODO_RESPONSE_JSON_SAMPLE_ID10 = "{\n" +
             "  \"userId\": 1,\n" +
@@ -58,7 +57,7 @@ public class SampleMediumTest extends AbstractMediumTest {
 
         given()
                 .header("Content-Type", "application/json")
-                .when().get("/Sample/10").then()
+                .when().get("/Sample/summary/10").then()
                 .assertThat().statusCode(200)
                 .assertThat().contentType(ContentType.JSON)
                 .assertThat().body(notNullValue());

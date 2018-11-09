@@ -1,7 +1,6 @@
 package onseo.jerseytest.functional;
 
 import io.restassured.RestAssured;
-import onseo.jerseytest.config.AppConfig;
 import onseo.jerseytest.config.properties.PlaceholderClientProperties;
 import onseo.jerseytest.services.SummaryService;
 
@@ -20,8 +19,6 @@ import org.springframework.boot.test.mock.mockito.SpyBean;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
-
-//import io.restassured.RestAssured;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(

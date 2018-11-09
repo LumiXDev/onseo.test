@@ -14,10 +14,8 @@ server:
 placeholderclient:
   hostURL: "http://jsonplaceholder.typicode.com"
   port: 80
-  timeout: 120
-  retries: 5
-resourcemap:
-  todoURI: "/todos/"
-  commentURI: "/comments/"
-  userURI: "/users/"
+  toDoPath: /todos/
+  commentPath: /comments/
+  userPath: /users/
+
 

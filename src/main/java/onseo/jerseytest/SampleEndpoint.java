@@ -1,6 +1,5 @@
 package onseo.jerseytest;
 
-import jdk.nashorn.internal.objects.annotations.Getter;
 import onseo.jerseytest.infrastructure.dao.models.CommentEntity;
 import onseo.jerseytest.infrastructure.dao.models.SummaryEntity;
 import onseo.jerseytest.infrastructure.dao.models.ToDoEntity;
@@ -14,7 +13,6 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import java.util.concurrent.ExecutionException;
 
 @Path("/Sample/")
 @Consumes(MediaType.APPLICATION_JSON)

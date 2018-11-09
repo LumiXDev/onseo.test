@@ -10,6 +10,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 public class PlaceholderClientProperties {
     private String hostURL;
     private int port;
-    private int timeout;
-    private int retries;
+    private String toDoPath;
+    private String commentPath;
+    private String userPath;
 }

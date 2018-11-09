@@ -22,40 +22,34 @@ public class SummaryService {
     private final PlaceholderClient<UserEntity> userEntityPlaceholderClient;
 
     public ToDoEntity getToDo(int todoId) {
-        return toDoEntityPlaceholderClient.getEntity(todoId, "/todos/", ToDoEntity.class);
+        return toDoEntityPlaceholderClient.getEntity(todoId, ToDoEntity.class);
     }
 
     public CommentEntity getComment(int commentId){
-        return commentEntityPlaceholderClient.getEntity(commentId, "/comments/", CommentEntity.class);
+        return commentEntityPlaceholderClient.getEntity(commentId, CommentEntity.class);
     }
 
     public UserEntity getUser(int userId) {
-        return userEntityPlaceholderClient.getEntity(userId, "/users/", UserEntity.class);
+        return userEntityPlaceholderClient.getEntity(userId, UserEntity.class);
     }
 
-    public <T extends Entity> T getEntityAsync(int id, String endpointSuffix, Class<T> cls) {
-        T result = null;
+    public <T extends Entity> T getEntity(int id, Class<T> cls) {
         PlaceholderClient<T> client = getAppropriateDaoClient(cls);
 
-        CompletableFuture<T> task = CompletableFuture.supplyAsync(() -> client.getEntity(id, endpointSuffix, cls));
-        try {
-            log.info("Async callback starts processing request from {} client...", cls.getName());
-            result = task.get();
-        }
-        catch(ExecutionException | InterruptedException ex)
-        {
-            log.error(ex.getMessage());
-        }
-        return result;
+        return client.getEntity(id, cls);
     }
 
     public SummaryEntity getSummaryAsync(int id) {
-        ToDoEntity entity = getEntityAsync(id, "/todos/", ToDoEntity.class);
+        CompletableFuture<ToDoEntity> toDoFuture = CompletableFuture.supplyAsync(() -> toDoEntityPlaceholderClient.getEntity(id, ToDoEntity.class));
+        CompletableFuture<CommentEntity> commentFuture = CompletableFuture.supplyAsync(() -> commentEntityPlaceholderClient.getEntity(id, CommentEntity.class));
+        CompletableFuture<UserEntity> userFuture = CompletableFuture.supplyAsync(() -> userEntityPlaceholderClient.getEntity(id, UserEntity.class));
 
-        return SummaryEntity.setExternal(
-                entity,
-                getEntityAsync(id, "/comments/", CommentEntity.class),
-                getEntityAsync(entity.getUserId(), "/users/", UserEntity.class));
+        try {
+            return new SummaryEntity(toDoFuture.get(), commentFuture.get(), userFuture.get());
+        } catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     private <T extends Entity> PlaceholderClient getAppropriateDaoClient(Class<T> cls)
