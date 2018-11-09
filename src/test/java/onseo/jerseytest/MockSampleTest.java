@@ -1,5 +1,6 @@
 package onseo.jerseytest;
 
+import lombok.extern.slf4j.Slf4j;
 import onseo.jerseytest.infrastructure.dao.PlaceholderClient;
 import onseo.jerseytest.infrastructure.dao.models.AddressEntity;
 import onseo.jerseytest.infrastructure.dao.models.CommentEntity;
@@ -16,9 +17,13 @@ import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
 
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
+
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.when;
 
+@Slf4j
 @RunWith(MockitoJUnitRunner.class)
 public class MockSampleTest {
     //Mocks
@@ -32,11 +37,14 @@ public class MockSampleTest {
     private SummaryService summaryService;
 
     @Before
-    public void setup() throws InterruptedException
-    {
-        when(toDoEntityPlaceholderClientMock.getEntity(Matchers.anyInt(), any(), any())).thenReturn(generateToDoStubEntity());
-        when(commentEntityPlaceholderClientMock.getEntity(Matchers.anyInt(), any(), any())).thenReturn(generateCommentStubEntity());
-        when(userEntityPlaceholderClientMock.getEntity(Matchers.anyInt(), any(), any())).thenReturn(generateUserStubEntity());
+    public void setup() throws ExecutionException, InterruptedException {
+        CompletableFuture<ToDoEntity> todoTask = CompletableFuture.supplyAsync(this::generateToDoStubEntity);
+        CompletableFuture<CommentEntity> commentTask = CompletableFuture.supplyAsync(this::generateCommentStubEntity);
+        CompletableFuture<UserEntity> userTask = CompletableFuture.supplyAsync(this::generateUserStubEntity);
+
+        when(toDoEntityPlaceholderClientMock.getEntity(Matchers.anyInt(), any(), any())).thenReturn(todoTask.get());
+        when(commentEntityPlaceholderClientMock.getEntity(Matchers.anyInt(), any(), any())).thenReturn(commentTask.get());
+        when(userEntityPlaceholderClientMock.getEntity(Matchers.anyInt(), any(), any())).thenReturn(userTask.get());
         summaryService = new SummaryService(toDoEntityPlaceholderClientMock, commentEntityPlaceholderClientMock, userEntityPlaceholderClientMock);
     }
 
@@ -54,20 +62,31 @@ public class MockSampleTest {
         System.out.println(summaryService.getSummaryAsync(5));
     }
 
-    private ToDoEntity generateToDoStubEntity() throws InterruptedException
+    private ToDoEntity generateToDoStubEntity()
     {
+        log.info("Generating stub ToDo entity...");
         ToDoEntity result = new ToDoEntity();
         result.setId(100);
         result.setUserId(200);
         result.setTitle("Some temporary title.");
         result.setCompleted(true);
 
-        Thread.sleep(500);
+        try
+        {
+            log.info("ToDo thread ({}) goes to sleep", Thread.currentThread().getName());
+            Thread.sleep(500);
+        }
+        catch(InterruptedException ex)
+        {
+            log.error("ERR: " + ex.getMessage());
+        }
+        log.info("ToDo thread resumed execution and returned {}", result);
         return result;
     }
 
-    private CommentEntity generateCommentStubEntity() throws InterruptedException
+    private CommentEntity generateCommentStubEntity()
     {
+        log.info("Generating stub Comment entity...");
         CommentEntity result = new CommentEntity();
         result.setId(8);
         result.setPostId(16);
@@ -75,12 +94,22 @@ public class MockSampleTest {
         result.setBody("Some stub comment body.");
         result.setEmail("someemail@stubdomain.org");
 
-        Thread.sleep(300);
+        try
+        {
+            log.info("Comment thread ({}) goes to sleep", Thread.currentThread().getName());
+            Thread.sleep(300);
+        }
+        catch(InterruptedException ex)
+        {
+            log.error("ERR: " + ex.getMessage());
+        }
+        log.info("Comment thread resumed execution and returned {}", result);
         return result;
     }
 
-    private UserEntity generateUserStubEntity() throws InterruptedException
+    private UserEntity generateUserStubEntity()
     {
+        log.info("Generating stub User entity...");
         UserEntity res = new UserEntity();
 
         res.setId(100);
@@ -112,7 +141,16 @@ public class MockSampleTest {
 
         res.setCompany(company);
 
-        Thread.sleep(400);
+        try
+        {
+            log.info("User thread ({}) goes to sleep", Thread.currentThread().getName());
+            Thread.sleep(400);
+        }
+        catch(InterruptedException ex)
+        {
+            log.error("ERR: " + ex.getMessage());
+        }
+        log.info("User thread resumed execution and returned {}", res);
         return res;
     }
 }
