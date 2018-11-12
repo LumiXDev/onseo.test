@@ -6,9 +6,11 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @Getter
 @Setter
-@ConfigurationProperties("placeholderclient.params")
+@ConfigurationProperties("placeholderclient")
 public class PlaceholderClientProperties {
-    private int mockport;
-    private int timeout;
-    private int retries;
+    private String hostURL;
+    private int port;
+    private String toDoPath;
+    private String commentPath;
+    private String userPath;
 }
