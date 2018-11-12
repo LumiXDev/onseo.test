@@ -4,3 +4,4 @@ target/
 .log/
 *~
 .java-version
+.gz
